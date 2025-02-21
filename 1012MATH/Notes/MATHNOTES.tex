@@ -1,0 +1,36 @@
+%--Preamble here --%
+\documentclass[11pt]{report}
+\usepackage[a4paper, total={6in,8in}]{geometry}
+\usepackage{amsmath}
+\usepackage{tikz}
+\title{Math Notes}
+\author{Pearl Lin}
+%--Document here--%
+\begin{document}
+\maketitle
+\tableofcontents
+
+\chapter{System Of Linear Equations}
+\paragraph{A system of linear equations is literally a set of linear lines. The number of total terms correspond to the number of dimensions. For example:}
+$$
+\begin{bmatrix}
+	ax+by+cz=n_{1} \\
+	dx+ey+fz=n_{2} \\
+	gx+hy+iz=n_{3} \\
+\end{bmatrix}
+$$
+\paragraph{The above corresponds to a 3 dimensional space with 3 planes (2d would be a line) where $a\to i$ and $n_{1\to3}$ correspond to constants and x,y,z correspond to the 3 units for space}
+
+\section{Row Echelon Form}	
+Row Echelon form/row reduction is a way to solve equations that do not fall into the category of 0 connections and every connection. You start in Row Echelon Form and through Gaussian Elimination/Row Reduction, \textit{Reduced Row Reduction Form} is achieved. 
+
+\subsection{Row Operations}
+There are 3 main operations:
+\begin{enumerate}
+	\item{$R_{i}\leftrightarrow R_{2}$: Exchange equations between $R_{i}$ and $R_{j}$}
+	\item{$R_{i}\leftarrow aR_{j}$: Multiply $R_{j}$ by constant $a$ and save into $R_{i}$}
+	\item{$R_{i}\leftarrow R_{i}+R_{j}$: Sum $R_{i}$ and $R_{j}$ and save into $R_{i}$}
+\end{enumerate}
+The 3 operations are used to achieve \textit{Reduced Row Reduction Form}.
+
+\end{document}

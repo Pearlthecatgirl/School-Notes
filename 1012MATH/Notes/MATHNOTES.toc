@@ -1,0 +1,5 @@
+\contentsline {chapter}{\numberline {1}System Of Linear Equations}{2}{}%
+\contentsline {paragraph}{A system of linear equations is literally a set of linear lines. The number of total terms correspond to the number of dimensions. For example:}{2}{}%
+\contentsline {paragraph}{The above corresponds to a 3 dimensional space with 3 planes (2d would be a line) where $a\to i$ and $n_{1\to 3}$ correspond to constants and x,y,z correspond to the 3 units for space}{2}{}%
+\contentsline {section}{\numberline {1.1}Row Echelon Form}{2}{}%
+\contentsline {subsection}{\numberline {1.1.1}Row Operations}{2}{}%
