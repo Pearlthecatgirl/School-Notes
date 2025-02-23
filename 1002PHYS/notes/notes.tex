@@ -37,16 +37,69 @@
 	\item{The laws of physics are the same in all inertial reference frames}
 	\item{The outcome of any experiment is the same when performed with an identical initial conditions relative to any inertial frame of reference}
 \end{itemize}
-\subsection{relative quantities/invariant quantities}
-\par{A relative quantity is a physical quantity which different observers may measure to have different values (e.g I am on a train with a ball moving at constant velocity. I observe that the ball is not moving (v=0) hence its kinetic energy is 0. Another observer outside of the train observes the ball to be moving, hence a non-zero kinetic energy.) In contrast, invariant quantities have the same value for all observers (e.g, mass)}
 \subsection{Postulates of \textbf{Special Relativity}}
 \par{The 2 postulates of \textbf{Special Relativity} are as follows:
 \begin{itemize}
 	\item{Postulate 1: The principle of relativity: The laws of physics are the same in all \textbf{non inertial frames of reference}}
-	\item{Postulate 2: The speed of light: In a vacuum, in all inertial frames, light propagates in a straight line at the same speed, denoted \textit{c} at all times and in all directions. The speed of light is invariant}
+	\item{Postulate 2: The speed of light: In a vacuum, in all inertial frames, light propagates in a straight line at the same speed, denoted \textit{c} at all times and in all directions. The speed of light is invariant.}
 \end{itemize}
+\subsection{Relative Quantities/Invariant Quantities}
+\par{A relative quantity is a physical quantity which different observers may measure to have different values (e.g I am on a train with a ball moving at constant velocity. I observe that the ball is not moving (v=0) hence its kinetic energy is 0. Another observer outside of the train observes the ball to be moving, hence a non-zero kinetic energy.) In contrast, invariant quantities have the same value for all observers (e.g, mass)}
+\subsubsection{Simultaneity is relative}
+\par{Let observer 'A' be in a spaceship, there is a light-bulb in the middle of the spaceship, shooting 2 beams: one to the front and one to the back. From 'a''s frame of reference, the 2 lights will appear to hit the wall at the same time. Another observer 'b', who is observing in the middle of space, sees that the beam towards the back of the space ship will hit the wall before the beam towards the front of the spaceship as the spaceship travels forward. This is relative simultaneity. It is important to note that if 1 event is caused by another, then those events \textbf{MUST} be be observed in the same order for all observers. An example is that this instant must have occurred after the creation of \LaTeX, as this document is being written in \LaTeX. This fact will be observed in the same order for all observers.}
+}
+\subsubsection{Some Lengths stay the same}
+\par{\textbf{Claim :} Lengths that are transverse to the direction of movement (at a right angle) do not change.\\\textbf{Proof by contradiction: Assume that a length that is transverse to the direction of movement changes with its motion} 2 Observers: 'a' and 'b'. Observer 'a' is on the train and 'b' is observing the train from the side. When the train is at rest, both agree on the height of the train to be 'h'. Ahead of the train, a tunnel with a clearance height of 'h' is observed. In the frame of reference of observer 'b', the tunnel is stationary and observer 'a' is moving towards it at a speed close to \textit{c} (speed of light). The assumption states that 'a' (in the same frame of reference as the train) will observe the height of the train to remain at 'h' while 'b' should in theory observe the height of the train to be some height less than h. This is a contradiction as the train cannot both fit and crash into the tunnel, meaning our assumption is false (and the claim is correct).
+}
+\subsubsection{Derivation of \textbf{'Time Dilation'} formula}
+\par{Suppose there are 2 observers, 'a' and 'b'. Observer 'a' is currently on a train travelling at relativistic speeds within the frame of reference of observer 'b'. Observer 'a' places a photon gun towards the roof to shoot a beam of photons, and a mirror directly above the gun, so that it reflects the photon beam back down. The time taken for a singular photon packet to travel from the gun to the mirror and get reflected back down is given by the following: \[
+t _{Train}=\frac{2d}{c}
+\] 
+Where:
+\begin{itemize}
+	\item{$t _{Train}$ is the time taken from the frame of reference on the train}
+	\item{$d$ is the distance from the gun barrel to the roof}
+	\item{$c$ is the speed of light}
+\end{itemize}
+This is easily derived as the total distance travelled by the photon packet is $2d$ (from the floor to the ceiling and from the ceiling to the floor) being substituted into  $v=\frac{s}{t}$ relationship between velocity, distance and time. From observer 'a''s perspective, the train is not moving (it is at constant velocity and hence, a non-inertial frame of reference). From observer 'b''s perspective, however, the train had since moved a certain distance $r$. The path the photon takes is now 2 times the hypotenuse of the triangle formed by $\frac{r}{2}$ and $d$ (height of the train) (as it is the path from the floor to the ceiling and the back down). When we compare the 2 times by joining them at the same variables and then rearrange, we get the following:
+\[
+t_{Observer}=\frac{t_{Train}}{\sqrt{1-\frac{v^{2}}{c^{2}}}}
+\] 
+We denote the following term:
+\[
+\gamma=\frac{1}{\sqrt{1-\frac{v^{2}}{c^{2}}}}
+\] 
+as the 'Lorentz' factor/gamma factor. Then, the time dilation formula simply becomes
+\begin{align}
+	t_{dilated}=t_{un-dilated}\times\gamma \\
+	\gamma \ge 1
+\end{align}
+In general, the time dilation formula is:
+\begin{align}
+	\Delta t'=\gamma\Delta t_{0}
+\end{align}
+Where:
+\begin{itemize}
+	\item{$\Delta t_{0}$ is the time between 2 events as seen by an observer who sees events occur at the same time (proper time)}
+	\item{$\Delta t'$ is the time between 2 events as seen by an observer who sees events occur at speed v relative to the first observer who measured the time (dilated time)}
+\end{itemize}
+\section{Coordinate Transformation}
+\par{ 4 results established that collapse into the idea of coordinate transformation:
+	\begin{itemize}
+		\item{Simultaneity is relative}
+		\item{lengths transverse to the direction of relative motion are unchanged}
+		\item{Time dilation: moving clocks run slower (Moving entity experiences "less" time during the same trip)}
+		\item{Length contraction: moving lengths shrink in the direction of motion}
+	\end{itemize}
+In general, a coordinate transformation is a set of mathematical expressions which relates any two sets of coordinate systems, whether they be the same or different frames of reference. }
+\par{Consider 2 observers, S and S', each with their own inertial coordinate system:(t,x,y,z) and (t',x',y',z') respectively. Observer 'S''s coordinate system has its origin at the centre of the room with the z unit vector pointing straight up. S' has its origin in the same place, but S''s y coordinate goes in the opposite direction as S's x coordinate, and S''s x coordinate goes in the same direction as S's y coordinate. In short, x'=y, y'=-x, z'=z. That is the way to get from 1 coordinate to another.
+}
+\subsubsection{Lorentz Transform}
+\par{Lorentz}
 
 }
 
-\end{document}
 
+
+
+\end{document}
