@@ -1,0 +1,120 @@
+\documentclass[11pt]{book}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\author{pearl}
+\title{MATH1012 Notes}
+
+\begin{document}
+\maketitle
+\chapter{Linear Algebra}
+\section{Set of linear equations}
+\subsection{Definitions}
+\begin{itemize}
+	\item{Linear equation: is an equation whose terms are numbers, and variables to the first power e.g $x+y=3$ is linear, but  $x^{2}+4y=5$ isn't.}
+	\item{Solution: a solution is a choice of values (numbers) that satisfies a linear equation.}
+	\item{System of linear Equation: is just a collection of linear equation. A solution to a system linear equation is a set of solutions which satisfy all equations. Give solution using set notation. E.g: $S=\{\left(2,1\right)\}$ for the graph: $x+2y=4, x-y=1$ an SLE in 2 dimensional space can either have:
+	\begin{itemize}
+		\item{No solutions (inconsistent): e.g 2 parallel lines}
+		\item{unique solution: 2 intersecting lines}
+		\item{Infinitely many solutions: 2 lines are the same line/overlay-ed on top of each other}
+	\end{itemize}
+	}
+\end{itemize}
+\subsubsection{Solving set of linear equations}
+\par{Solve them geometrically or solve them through algebra. Example below:}
+\begin{align*}
+	x+y+z=1 \\ 
+	x+y-z=1
+\end{align*}
+\subsubsection{Solving geometrically}
+\begin{enumerate}
+	\item{guess 1 point from each equation: (1,0,0) and (0,1,0)}
+	\item{The line that connects up the points is a solution}
+\end{enumerate}
+\subsubsection{Solving algebraically}
+\begin{enumerate}
+	\item{Subtraction method. 'Subtract' one equation from the other
+		\begin{align*}
+			(x+y+z=1) - (x+y-z=1)\\
+			\implies 0 + 0 + 2z=0 \\
+			\implies z=0 \\
+			\implies x+y+0=1 \\
+			\implies x+y=1
+		\end{align*}
+		}
+\end{enumerate}
+\subsection{Parametric Solutions}
+\par{In a parametric solution, every coordinate is either \textbf{constant, free variable, linear combination }(constants and free variables). i.e expressing the equation in terms of one variable. We can take x as the free variable, or y. Using the above as an example:}
+\begin{align*}
+	x+y+z=1 \\ 
+	x+y-z=1 \\
+	\implies x+y=1 \\
+	\implies x=1-y \\
+	\implies y=1-x \\
+	\implies z=0 \\
+	\therefore S=\{\left(x, 1-x, 0\right)\ \|x\in \mathbb{R} \}
+\end{align*}
+\par{Some variables cannot be chosen as free variables, in this example: z.}
+\subsection{Elementary Row Operations}
+\par{Given a set of linear equations: 
+\begin{align*}
+	x+y=5 \\
+	2x-2y=7
+\end{align*}
+We can do the following and have no effect on the solution set:
+\begin{itemize}
+	\item{swap 2 equations' locations}
+		\begin{align*}
+			2x-2y=7 \\
+			x+y=5
+		\end{align*}
+	\item{Multiply an equation by a non-zero number}
+		\begin{align*}
+			x+y=5 \\
+			\text{becomes} \\
+			2x+2y=2 \times 5 \\
+			= 2x +2y=10
+		\end{align*}
+	\item{Add a multiple of one equation to another}
+		\begin{align*}
+			x+y=6 \\
+			2x+2y=10 \\
+		\end{align*}
+		$R2\leftarrow R2-R1$
+		\begin{align*}
+			x+y=6 \\
+			-4y=-3 \\
+			y=\frac{-3}{-4} \\
+			y=\frac{3}{4}
+		\end{align*}
+\end{itemize}
+}
+\subsection{Matrix notation and Gaussian elimination}
+\par{Systems of linear equations can be expressed as a matrix, where the variables (x,y,z , etc) are omitted and only the coefficients are written down. Example:
+\begin{align}
+	x+2y=7 \\
+	2x-y=4
+\end{align}
+Becomes:
+\[
+\left[
+\begin{array}{cc|c}
+	\text{x column} & \text{y column} & \text{solution} \\
+	1 & 2 & 7 \\
+	2 & -1 & 4
+\end{array}
+\right]
+\]
+\subsection{Row Echelon Form}
+\par{A matrix is in row echelon form if:
+	\begin{itemize}
+		\item{The rows that are \textbf{all-zero} should be at the bottom}
+		\item{The \textbf{leading entry} of every other row is \textbf{further to the right} than the leading entry of any previous rows}
+	\end{itemize}
+}
+
+\end{document}
+
+
+
