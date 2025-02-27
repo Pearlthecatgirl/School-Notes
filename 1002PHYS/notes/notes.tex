@@ -116,8 +116,8 @@ The Lorenz transformation is given by the following vector of operations:
 \section{Space-time intervals}
 \par{If 2 observers moving relative to one another, and they both see the same 2 events, they will measure the time and distance between the 2 events differently, i.e: $\Delta t, \Delta x, \Delta y, \Delta z$ will be different between the 2 inertial observers (generally). However, lets first take the first observer to be S. Then  S will use the inertial coordinates: $\left(t,x,y,z\right)$. As a result, the time difference and space difference between the 2 events as observed by S is given as: $\left(\Delta t, \Delta x,\Delta y, \Delta z\right)$. The space-time interval $\left(\Delta S\right)^{2}$ between the 2 events is defined to be:  
 \begin{align*}
-\left(\Delta S\right)^{2}=c^{2}\left(\Delta t\right)^{2}-\left(\Delta x\right)^{2}-\left(\Delta y\right)^{2}-\left(\Delta z\right)^{2} \\
-\implies\Delta S^{2}=c\Delta t^{2}-\left(\Delta x^{2}+\Delta y^{2}+\Delta z^{2}\right)
+\left(\Delta s\right)^{2}=c^{2}\left(\Delta t\right)^{2}-\left(\Delta x\right)^{2}-\left(\Delta y\right)^{2}-\left(\Delta z\right)^{2} \\
+\implies\Delta s^{2}=c\Delta t^{2}-\left(\Delta x^{2}+\Delta y^{2}+\Delta z^{2}\right)
 \end{align*}
 Notice the composition of the above formula. $\left(\Delta x^{2}+\Delta y^{2}+\Delta z^{2}\right)$ is simply the distance between the 2 events squared, and $\Delta t^{2}$ is the time interval squared. $\Delta S^{2}$ is actually \textbf{not a squared value} as the result of a square operation must be positive and the right hand side of the equation may result in a negative number. The space-time interval is a relativistic invariant, meaning all observers will agree on its value. If another observer S' observes the same 2 events, observes the same difference in space/time, S' will compute $\left(\Delta S'\right)^{2}$ defined in the same way as S from above, but $\left(\Delta S'\right)^{2}=\left(\Delta S\right)^{2}$.
 }
@@ -128,9 +128,46 @@ Notice the composition of the above formula. $\left(\Delta x^{2}+\Delta y^{2}+\D
 		\item{If $\Delta s^{2}>0$, the events are \textbf{time-like}.}
 	\end{itemize}
 If 2 events are not causally related (observers may argue on which event happened first), then the 2 events must be \textbf{space-like}. Causally related events must be \textbf{time-like} or \textbf{light-like}.
+
+The above formula can be rearranged for the speed of the signal required for the signal to be present at both events described:
+\[
+c\ \{<, >, =\}\ \frac{\sqrt{\Delta x^2 + \Delta y^{2}+\Delta z^{2}}}{\|\Delta t\|}
+\] 
+
 }
 \subsection{Light-like events}
-\par{2 events are said to be \textbf{connected by a light signal}, if a photon could have been present at both events: e.g if an atom emits a photon and another atom receives that photon. All null events are connected by a light-signal. 
-
+\par{2 events are said to be \textbf{connected by a light signal}, if a photon could have been present at both events: e.g if an atom emits a photon and another atom receives that photon. All null events are connected by a light-signal. Proof: For any pair of events connected by a light signal, we must have
+	\begin{align*}
+		c=\frac{\text{distance between events}}{\text{time between events}} \\
+		c=\frac{\sqrt{\Delta x^{2}+\Delta y^{2}+\Delta z^{2}}}{\|\Delta t\|} \\
+		c^{2}=\frac{\Delta x^{2}+\Delta y^{2}+\Delta z^{2}}{\left(\Delta t\right)^{2}} \\
+		c^{2}\left(\Delta t\right)^{2}=\Delta x^{2}+\Delta y^{2}+\Delta z^{2} \\
+		c^{2}\left(\Delta t\right)^{2}-\Delta x^{2}+\Delta y^{2}+\Delta z^{2}=0 \\
+	\end{align*}
+}
+\section{Time-like events}
+\par{Events are time-like if the space-time interval is positive. An example: S sees 2 events which occur at the same point in space. As they are at the same point, their distance is 0, and as the time component of spacetime interval is the result of a square, it must be positive.
+\begin{align*}
+	c^{2}\Delta t^{2}>\left(\Delta x\right)^{2}+\left(\Delta y\right)^{2}+\left(\Delta z\right)^{2} \\
+	c>\frac{\sqrt{\Delta x^{2}+\Delta y^{2}+ \Delta z^{2}}}{\|\Delta t\|}
+\end{align*}
+This above shows that it is possible for such event as the speed (distance over a time) is less than the speed of light. This implies that it is possible for an observer to be present at 2 events. That implies that timelike events may be causally related. As the observer can be present at both events, it is possible for the observer to have caused both events. Also implies that all observers also agree on the temporal ordering of the events (1 event must occur after the other). }
+\section{Space-like events}
+\par{Events are space-like if the space-time interval is negative.
+\[
+\Delta s^{2}=c^{2}\Delta t^{2}-\left(\Delta x^2 + \Delta y^{2}+\Delta z^{2}\right)<0
+\] 
+For example: On a train car, observer S sees a light bulb shoot 2 photons simultaneously, one towards the front end of the train car, the other to the back. As both occur in 1 instant to the observer, $\Delta t=0$, and the distance between 2 events are $\Delta x\ne0$ As a result, 
+\begin{align*}
+\Delta s^{2}=0-\Delta x^{2} \\
+\implies \Delta s^{2}<0 \\
+\implies \Delta s^{2}=c^{2}\Delta t^{2}-\left(\Delta x^2 + \Delta y^{2}+\Delta z^{2}\right)<0 \\
+\implies c<\frac{\sqrt{\Delta x^2 + \Delta y^{2}+\Delta z^{2}}}{\|\Delta t\|}
+\end{align*}
+This is completely impossible as the speed of the signal must be greater than the speed of light, and thus, the 2 events must not be causally related, as the signal cannot travel from 1 event to another in time to catch both events. This implies that space-like events are not causally related. Also implies that different observers can disagree on the temporal ordering of the events. 
+}
+\section{Space-time diagrams}
+23:49
+\par{}
 
 \end{document}
