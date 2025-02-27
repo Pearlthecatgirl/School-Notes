@@ -31,6 +31,8 @@
 	\sqrt{\left(x_{2}-x_{1}\right)^{2}+\left(y_{2}-y_{1}\right)^{2}+\left(z_{2}-z_{1}\right)^{2}} \\=\sqrt{\Delta x^{2}+\Delta y^{2}+\Delta z^{2}}
 \end{align*}
 	}
+	\item{Proper Time: Is the time duration given by the observer who sees two events take place at the same location in space: E.g If I get in an elevator, I see the building move up and down, and they stop/start at the same location.}
+	\item{Proper Length: Is the length of an object given by an observer who sees the object as being still/at rest.}
 \end{itemize}
 \section{The Principle of Relativity}
 \begin{itemize}
@@ -92,14 +94,43 @@ Where:
 		\item{Length contraction: moving lengths shrink in the direction of motion}
 	\end{itemize}
 In general, a coordinate transformation is a set of mathematical expressions which relates any two sets of coordinate systems, whether they be the same or different frames of reference. }
-\par{Consider 2 observers, S and S', each with their own inertial coordinate system:(t,x,y,z) and (t',x',y',z') respectively. Observer 'S''s coordinate system has its origin at the centre of the room with the z unit vector pointing straight up. S' has its origin in the same place, but S''s y coordinate goes in the opposite direction as S's x coordinate, and S''s x coordinate goes in the same direction as S's y coordinate. In short, x'=y, y'=-x, z'=z. That is the way to get from 1 coordinate to another.
-}
+\par{Consider 2 observers, S and S', each with their own inertial coordinate system:(t,x,y,z) and (t',x',y',z') respectively. Observer 'S''s coordinate system has its origin at the centre of the room with the z unit vector pointing straight up. S' has its origin in the same place, but S''s y coordinate goes in the opposite direction as S's x coordinate, and S''s x coordinate goes in the same direction as S's y coordinate. In short, x'=y, y'=-x, z'=z. That is the way to get from 1 coordinate to another.}
 \subsubsection{Lorentz Transform}
-\par{Lorentz}
-
+\par{Consider 2 observers S and S'. Then the coordinate system for space-time used by both are given as follows: (t,x,y,z) and (t',x',y',z') respectively. The Lorentz transform is then used to change 1 set of coordinates into the other. When the following criteria are fulfilled, the arrangement is known as a \textbf{standard configuration}:
+	\begin{itemize}
+		\item{The x, y, z coordinates of frame S are oriented parallel to that of S'}
+		\item{Frame S' moves at a constant velocity (inertial frame)}
+		\item{The origin coordinates in space coincide when S and S' have time=0}
+	\end{itemize}
+The Lorenz transformation is given by the following vector of operations:
+\begin{align*}
+	t'=\gamma\left(t-\frac{vx}{c^{2}}\right) \\
+	x'=\gamma\left(x-vt\right) \\
+	y'=y \\
+	z'=z \\
+	\text{where:} \\
+	\gamma=\frac{1}{\sqrt{1-\frac{v^{2}}{c^{2}}}}
+\end{align*}
+(for movement across the x direction)
 }
-
-
+\section{Space-time intervals}
+\par{If 2 observers moving relative to one another, and they both see the same 2 events, they will measure the time and distance between the 2 events differently, i.e: $\Delta t, \Delta x, \Delta y, \Delta z$ will be different between the 2 inertial observers (generally). However, lets first take the first observer to be S. Then  S will use the inertial coordinates: $\left(t,x,y,z\right)$. As a result, the time difference and space difference between the 2 events as observed by S is given as: $\left(\Delta t, \Delta x,\Delta y, \Delta z\right)$. The space-time interval $\left(\Delta S\right)^{2}$ between the 2 events is defined to be:  
+\begin{align*}
+\left(\Delta S\right)^{2}=c^{2}\left(\Delta t\right)^{2}-\left(\Delta x\right)^{2}-\left(\Delta y\right)^{2}-\left(\Delta z\right)^{2} \\
+\implies\Delta S^{2}=c\Delta t^{2}-\left(\Delta x^{2}+\Delta y^{2}+\Delta z^{2}\right)
+\end{align*}
+Notice the composition of the above formula. $\left(\Delta x^{2}+\Delta y^{2}+\Delta z^{2}\right)$ is simply the distance between the 2 events squared, and $\Delta t^{2}$ is the time interval squared. $\Delta S^{2}$ is actually \textbf{not a squared value} as the result of a square operation must be positive and the right hand side of the equation may result in a negative number. The space-time interval is a relativistic invariant, meaning all observers will agree on its value. If another observer S' observes the same 2 events, observes the same difference in space/time, S' will compute $\left(\Delta S'\right)^{2}$ defined in the same way as S from above, but $\left(\Delta S'\right)^{2}=\left(\Delta S\right)^{2}$.
+}
+\par{As all $\Delta s^{2}$ is invariant, we can classify all pairs of events as any of the three below:
+	\begin{itemize}
+		\item{If $\Delta s^{2}<0$, the distance between the 2 events is bigger than the time taken, and the events are \textbf{space-like}.}
+		\item{If $\Delta s^{2}=0$, the events are \textbf{light-like}, or \textbf{null}.}
+		\item{If $\Delta s^{2}>0$, the events are \textbf{time-like}.}
+	\end{itemize}
+If 2 events are not causally related (observers may argue on which event happened first), then the 2 events must be \textbf{space-like}. Causally related events must be \textbf{time-like} or \textbf{light-like}.
+}
+\subsection{Light-like events}
+\par{2 events are said to be \textbf{connected by a light signal}, if a photon could have been present at both events: e.g if an atom emits a photon and another atom receives that photon. All null events are connected by a light-signal. 
 
 
 \end{document}
