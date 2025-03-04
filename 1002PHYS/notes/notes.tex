@@ -1,5 +1,6 @@
 \documentclass[10pt]{report}
 
+%preamble stuff here :3
 \usepackage{amsmath}
 \usepackage[margin=1cm,nohead]{geometry}
 \author{Pearl Lin 24465993}
@@ -96,7 +97,7 @@ Where:
 In general, a coordinate transformation is a set of mathematical expressions which relates any two sets of coordinate systems, whether they be the same or different frames of reference. }
 \par{Consider 2 observers, S and S', each with their own inertial coordinate system:(t,x,y,z) and (t',x',y',z') respectively. Observer 'S''s coordinate system has its origin at the centre of the room with the z unit vector pointing straight up. S' has its origin in the same place, but S''s y coordinate goes in the opposite direction as S's x coordinate, and S''s x coordinate goes in the same direction as S's y coordinate. In short, x'=y, y'=-x, z'=z. That is the way to get from 1 coordinate to another.}
 \subsubsection{Lorentz Transform}
-\par{Consider 2 observers S and S'. Then the coordinate system for space-time used by both are given as follows: (t,x,y,z) and (t',x',y',z') respectively. The Lorentz transform is then used to change 1 set of coordinates into the other. When the following criteria are fulfilled, the arrangement is known as a \textbf{standard configuration}:
+\par{Consider 2 observers S and S'. Then the coordinate system for space-time used by both are given as follows: (t,x,y,z) and (t',x',y',z') respectively. The Lorentz transform is then used to change 1 set of coordinates into the other. When the following criteria are fulfilled, the arrangement is known as a \textbf{standard configuration}. While not necessary, the standard configuration may make dealing with frames easier:
 	\begin{itemize}
 		\item{The x, y, z coordinates of frame S are oriented parallel to that of S'}
 		\item{Frame S' moves at a constant velocity (inertial frame)}
@@ -166,6 +167,96 @@ For example: On a train car, observer S sees a light bulb shoot 2 photons simult
 \end{align*}
 This is completely impossible as the speed of the signal must be greater than the speed of light, and thus, the 2 events must not be causally related, as the signal cannot travel from 1 event to another in time to catch both events. This implies that space-like events are not causally related. Also implies that different observers can disagree on the temporal ordering of the events. }
 \section{Velocity transformations}
+\par{If two observers travel at different relativistic speeds (significant fraction of speed of light), they cannot simply add/subtract vectors to determine each other's speeds as per Gallilean relativity. This is because observers cannot observe anything to be moving greater than the speed of light, which Gallilean relativity allows. This can be derived from the spacetime-interval, which all observers agree upon.}
+\par{Take 2 observers, S and S', with the coordinates $S=\left(t,x,y,z\right), S'=\left(t',x',y',z'\right)$. S is on a planet, observing 2 spaceships on a collision course, whereas S' is on one of the spaceships. S observes the empty spaceship to be moving at a velocity $\vec{u}=\left(u_{x},u_{y},u_{z}\right)$ and S' observes it to be moving at a velocity $\vec{u'}=\left(u'_{x},u'_{y},u'_{z}\right)$. Both observers view the moving object to be of constant velocity. If one observer views an object to be at constant velocity, then all observers must view it as at constant velocity. If we imagine a spacetime diagram, with 2 events on the spaceships' worldline. S will view the distance and time duration between the 2 events to be: $S:\left(\Delta t, \Delta x, \Delta y, \Delta z\right)$ and $S':\left(\Delta t', \Delta x', \Delta y', \Delta z'\right)$. As a result the 2 velocities will simply be: }
+\begin{align*}
+	S: \vec{u}=\left(\frac{\Delta x}{\Delta t},\frac{\Delta y}{\Delta t},\frac{\Delta z}{\Delta t}\right) \\
+	S': \vec{u'}=\left(\frac{\Delta x'}{\Delta t'},\frac{\Delta y'}{\Delta t'},\frac{\Delta z'}{\Delta t'}\right) \\
+\end{align*}
+\par{As we have the 2 velocities, we can use the relationships for time dilation and length contraction to find one given we have the other.}
+
+TODO: add velocity transformation derivation here.
+\section{Relativistic Energy and Momentum}
+\par{We again define and observer S: $\left(t,x,y,z\right)$ viewing an object moving at velocity: $\vec{u}$. Let the velocity of a single \textbf{massive} (travelling at less than the speed of light.) particle be observed by S to be moving at $\vec{u}:\left(\frac{dx}{dt},\frac{dy}{dt},\frac{dz}{dt}\right)=\left(u_{x},u_{y},u_{z}\right)$: and the speed given by $u=\sqrt{\vec{u}\cdot\vec{u}}=\sqrt{u_{x}^{2}+u_{x}^{2}+u_{x}^{2}}$, provided that $u<c$. The (relativistic) momentum of this particle as observed by S is now:}
+\begin{align*}
+	\vec{p}=\left(p_{x},p_{y},p_{z}\right) \\
+	=\frac{m\vec{u}}{\sqrt{1-\frac{v^{2}}{c^{2}}}} \\
+	=\gamma \left(u\right)m\vec{u} \\
+	\text{where } \gamma\left(u\right)=\frac{1}{\sqrt{1-\frac{v^{2}}{c^{2}}}} \\
+\end{align*}
+$m=$ Mass of the particle, sometimes called the 'rest mass'. It is an invariant and measured in standard S.I units (Kg).
+\subsection{Relativistic energy}
+\par{The energy of the particle is given as:}
+\begin{align*}
+	E=\frac{mc^{2}}{\sqrt{1-\frac{u^{2}}{c^{2}}}} \\
+	=\gamma\left(u\right)mc^{2}
+\end{align*}
+If at rest, the energy is called: $E_{0}$ ('E nought' is typically used to denote at rest), Then the kinetic energy will just be:
+\begin{align*}
+	K=E-E_{0} \\
+	=\gamma\left(u\right)mc^{2}-mc^{2} \\
+	=\left(\gamma\left(u\right)-1\right)mc^{2}
+\end{align*}
+At low speeds: 
+\begin{align*}
+\gamma\left(u\right)=1+\frac{1}{2}\frac{v^{2}}{c^{2}} \\
+k=\left(\gamma\left(u\right)-1\right)mc^{2}\\
+=\left(\frac{1}{2}\frac{u^{2}}{c^{2}}\right)mc^{2} \\
+=\frac{1}{2}mu^{2}
+\end{align*}
+Which makes sense in Newtonian physics.
+\subsection{Momentum Energy Relation}
+\par{We can combine both momentum and energy into 1 equation by eliminating $u$}
+\begin{equation*}
+	\begin{aligned}[c]
+		\vec{p}\cdot\vec{p}&=\gamma\left(u\right)^{2}m^{2}\vec{u}\cdot\vec{u} \\
+		p^{2}&=\frac{m^{2}u^{2}}{1-\frac{u^{2}}{c^{2}}}
+	\end{aligned}
+	\quad\leftrightarrow\quad
+	\begin{aligned}[c]
+		E&=\gamma\left(u\right)mc^{2} \\
+		E^{2}&=\gamma\left(u\right)^{2}m^{2}c^{4} \\
+		E^{2}&=\frac{m^{2}c^{4}}{1-\frac{u^{2}}{c^{2}}}
+	\end{aligned}
+\end{equation*}
+\begin{align*}
+	p^{2}&-\frac{u^{2}p^{2}}{c^{2}}=m^{2}u^{2} \\
+	p^{2}&=m^{2}u^{2}+\frac{u^{2}p^{2}}{c^{2}} \\
+	p^{2}&=u^{2}\left(m^{2}+\frac{p^{2}}{c^{2}}\right) \\
+	u^{2}&=\frac{p^{2}}{m^{2}+\frac{p^{2}}{c^{2}}} \\ 
+	\frac{u^{2}}{c^{2}}&=\frac{p^{2}}{c^{2}m^{2}+p^{2}} \\
+	1-\frac{u^{2}}{c^{2}}&=1-\frac{p^{2}}{c^{2}m^{2}+p^{2}} \\
+	&=\frac{c^{2}m^{2}+p^{2}-p^{2}}{c^{2}m^{2}p^{2}} \\
+	1-\frac{u^{2}}{c^{2}}&=\frac{c^{2}m^{2}}{c^{2}m^{2}+p^{2}} \\
+\end{align*}
+After substitution and cancelling we get:
+\[
+E^{2}=p^{2}c^{2}+c^{4}m^{2}
+\] 
+For a highly relativistic particle:
+\begin{align*}
+	&u\to c \\
+	&\gamma\left(u\right)\to\infty \\
+	&E^{2}\to\infty \\
+	&p^{2}\to\infty
+\end{align*}
+Then the constant at the back $m^{2}c^{4}$ is ignorable (implying that its mass is ignorable) and that \[
+E=pc
+\]  for particles at light speed. As a result, we consider light-speed particles to be mass-less. 
+\subsubsection{The Momentum of a Mass-less Particle}
+\par{As it is mass-less, it is travelling at the speed of light, $u=c$. We introduce a unit vector. The momentum of a mass-less/light-speed particle is defined as:}
+\[
+	\vec{p}=\frac{E}{c}\hat{n}
+\] 
+Note: massive particles can have $\vec{p}=0$ by being at rest, but all particles, whether at rest or otherwise, massive or mass-less, all particles \textbf{MUST} carry non-zero energy. Therefore: mass-less particles cannot have $\vec{p}=0$ as they are moving.
+
+\subsubsection{Conservation Laws:}
+\par{For an isolated dynamical system in mechanics where particles interact only by contact (collisions, extremely short-ranged forces), the total relativistic momentum and energy of the system is then conserved (Stays the same as time passes). Total momentum is the sum of all the momenta of particles in the system (sum). The same is true for total energy}
+\begin{align*}
+	\vec{P}_{T}=P_{1}+P_{2}+P_{3}...P_{n} \\
+	\vec{E}_{T}=E_{1}+E_{2}+E_{3}...E_{n} \\
+\end{align*}
+
 
 
 \end{document}
