@@ -304,7 +304,48 @@ $$
 \end{pmatrix}
 $$
 Remember the span returns the full set, whereas the spanning set refers to the set which builds the span.
+\subsection{Verifying a Spanning Set}
+\par{Given a subspace $S$, how do we prove that $T$ is a spanning set? We must verify that all vectors in the span can be made from linear combinations of the spanning sets, as well as the spanning sets being unable to make anything outside of the span. E.g:
 
+	Show that span$\left(\left(1,1,0\right), \left(0,0,1\right)\right)=\lbrace(\left(x,x,z\right):x,z\in\mathbb{R}\rbrace)$
+}
+\begin{enumerate}
+	\item{What vectors are in: span$\left( \left(1,1,0\right), \left(0,0,1\right)\right)=\lbrace( \left(x,x,z\right) :x,z\in\mathbb{R} \rbrace)$}
+	\item{All vectors of the form: $\alpha\left(1,1,0\right)+\beta\left(0,0,1\right)=\left(\alpha,\alpha,\beta\right)$}
+	\item{This is similar to the above answer of $\left(x,x,z\right)$, so it is the same.}
+\end{enumerate}
+\subsection{Finding a small spanning set for $S$}
+\begin{enumerate}
+	\item{Algorithm: choose some vector $v_{1}\in S$ and examine span$\left(v_{1}\right)$}
+	\item{Check if this is enough to fill $S$. If it isn't enough, there are some vectors that you can span, and some which you can't.}	
+	\item{Choose a $v_{2}\in S$ to try and reach all the vectors that $v_{1}$ cannot reach.}
+	\item{Keep going until S can be contained}
+\end{enumerate}
+\par{If $S$ is given in a \textbf{parametric form} then there is an easy way to find the spanning set.}
+\begin{align*}
+	& S=\lbrace\left(x,2x,z,-z\right): x,z,\in \mathbb{R}\rbrace \\
+	& \vec{v_{1}}=\left(1,2,0,0\right) \\
+	& \vec{v_{2}}=\left(0,0,1,-1\right) \\
+	& \left(x,2x,z,-z\right)=\left(x,2x,0,0\right)+\left(0,0,z,-z\right)
+\end{align*}
+\subsection{Linear Independence}
+\par{A set of vectors is linearly dependent if one of them is a linear combination of the others. E.g: \[
+\lbrace\vec{v_{1}}, 2\vec{v_{1}}\rbrace
+\] We see here that the 2nd coordinate is just 2 times the first coordinate. A set of size 2 is linearly dependent only when one is a multiple of the other.}
+\subsection{Linear Independence Test}
+\par{in $\mathbb{R}^{n}$, a set $T=\lbrace v_{1}, v_{2}, v_{3}...v_{k}\rbrace$ is linearly independent if and only if the homogeneous system of n linear equations in the unknowns has a unique solution. E.g: }
+\begin{align*}
+	& T=\lbrace\left(1,0,0\right), \left(0,1,1\right), \left(1,1,2\right)\rbrace \\
+	& \text{Solve } \\ 
+	& \alpha_{1}\left(1,0,0\right)+\alpha_{2}\left(0,1,1\right)+\alpha_{3}\left(1,1,2\right)=\left(0,0,0\right)
+\end{align*}
+The solution must always equal $\left(0,0,0\right)$ as it should be homogeneous
+\subsection{Properties of linear independence}
+\begin{itemize}
+	\item{A subset of a linearly independent set is linearly independent.}
+	\item{A superset of a linearly dependent set is dependent.}
+\end{itemize}
+\par{This is quite common sense as if you have a dependent set, adding something extra won't change it to be independent. }
 
 \end{document}
 
