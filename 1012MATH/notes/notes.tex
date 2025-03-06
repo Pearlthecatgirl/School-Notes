@@ -111,10 +111,200 @@ Becomes:
 	\begin{itemize}
 		\item{The rows that are \textbf{all-zero} should be at the bottom}
 		\item{The \textbf{leading entry} of every other row is \textbf{further to the right} than the leading entry of any previous rows}
+		\item{The leading entry is the first number of each row}
+		\item{\textbf{basic variables} are variables that are also leading entries.}
+		\item{All non-basic variables are free variables}
 	\end{itemize}
 }
+\subsubsection{Back substitution}
+\par{Read the last row and it should give one of the answers. E.g We want to have a set of answers which are either:
+\begin{itemize}
+	\item{free variables (non basic)}
+	\item{numbers}
+	\item{a combination of both}
+\end{itemize}}
+%\left[
+%\begin{array}{cccc|c}
+%	1 & 1 & -1 & 2 & 0 \\
+%	0 & 0 & 2 & 1 & 1 \\
+%	0 & 0 & 0 &2 & 0
+%\end{array}
+%\right]
+\subsubsection{Gaussian Elimination}
+\par{Example: }
+\begin{itemize}
+	\item{The pivot is the top row. We want to apply row operations to make the numbers below the pivot to 0}
+\end{itemize}
+\[
+\left[
+\begin{array}{cccc|c}
+1 & 0 & 1 & 3 & 2 \\
+2 & 1 & 2 & 0 & 0 \\
+-1 & 3 & 4 & 0 & 1
+\end{array}
+\right]
+\]
+\begin{enumerate}
+	\item{R2$\leftarrow$ R2-2R1}
+	\item{R3$\leftarrow$ R3-2R1}
+\end{enumerate}
+\[
+\left[
+\begin{array}{cccc|c}
+1 & 0 & 1 & 3 & 2 \\
+0 & 1 & 0 & -6 & -4 \\
+0 & 3 & 5 & 3 & 3
+\end{array}
+\right]
+\]
+\begin{enumerate}
+	\item{R3 $\leftarrow$ R3 - 3 $\times$ R2}
+\end{enumerate}
+\[
+\left[
+\begin{array}{cccc|c}
+1 & 0 & 1 & 3 & 2 \\
+0 & 1 & 0 & -6 & -4 \\
+0 & 0 & 5 & 21 & 15
+\end{array}
+\right]
+\]
+\par{Here we are now in reduced row echelon form. We can see that the $x_{4}$ column is non-basic. We want to express the basic variables in terms of the non basic variables.}
+\subsubsection{Counting solutions}
+\par{To determine whether the solution count is 0, 1 or $\infty$}
+\begin{itemize}
+	\item{If all numbers are 0 producing a non-zero, then there are no solutions}
+	\item{if there is a free variable there are infinite solutions}
+	\item{if there are no free variables and there doesn't exist a row containing all zeros producing a non-zero value in the augmented column then there is exactly 1 solution.}
+\end{itemize}
+\begin{itemize}
+	\item{if SLE is \textbf{inconsistent then} $S =\emptyset$}
+	\item{If SLE has a \textbf{unique solution}, then get S from the matrix}
+	\item{if there are infinitely many solutions, then use back substitution to express S in \textbf{parametric form}}
+	\item{S is the set of solutions}
+\end{itemize}
+\subsubsection{Reduced Row Echelon Form}
+\par{There is a simpler form of matrices called reduced row echelon form. It has the extra condition from regular row echelon form in that both above and below the pivot row has to be 0. The leading entries must also be '1'. This form lets us get the direct parametric form in in the solution for back substitution.}
+\begin{enumerate}
+	\item{Ensure the entry in pivot position is non-zero (swap rows if necessary)}
+	\item{Add a suitable multiple of pivot row to each row above and below the pivot row to zero out the matrix entries above and below the pivot}
+	\item{Move the pivot position 1 column and 1 row}
+\end{enumerate}
+\section{Vector spaces and subspaces}
+\begin{itemize}
+	\item{The set of all vectors of \textbf{arity} n is denoted $\mathbb{R}^{n}$}
+	\item{adding vectors of the same arity}
+	\item{multiplying vectors by a number}
+	\item{Set of solutions of SLE is just a vector}
+\end{itemize}
+\subsection{Closure}
+\par{A set of vectors that are closed under addition if any vector from that set added to another vector in that set will produce a vector that exists within its original set. This also applies to multiplication: a vector multiplied by a number will stay in its original set. Closed in general is a property of a set of vectors for which when an operation is applied to such set, the solution is part of the set. This property must hold for all members of the set. E.g:
+\begin{align*}
+	S=\{\left(1,2\right), \left(2,4\right), \left(3,6\right)\} \\
+	\text{The above is not closed as not all pairs produce addition answers within the set}
+\end{align*}
+in order to show closure, provide a specific counterexample that always works, or symbolic proof. THe proof must work for all examples, whereas the disproof only needs to show 1 counterexample.}
+\subsection{Subspace}
+\par{A set of vectors is a subspace if
+\begin{itemize}
+	\item{The zero vector must be contained in the set.}
+	\item{The set must be closed under addition/multiplication.}
+\end{itemize}
+Testing if a subspace does not contain a zero, is a fast way to test if a subspace is valid. In $\mathbb{R}^{2}$, valid subspaces are typically the full set, the origin, or a line through the origin. E.g:
+\begin{itemize}
+	\item{$x=y$ in $\mathbb{R}^{2}$}
+	\item{$x+1=2y$ in $\mathbb{R}^{2}$}
+\end{itemize}
+\subsubsection{Proving $x=y$}
+\begin{align*}
+	x+2y-3z=0 \\
+	(0)+2(0)-3(0)=0 \\
+	\implies (0,0,0) \text{is within the set} \\
+	\text{let } u,v \in S\\
+	\text{then} \left(u_{1}+u_{1},u_{2}+u_{2},u_{3}+u_{3}\right) \\
+	u_{1}+v_{1}+2\left(u_{1}+v_{1}\right)-3\left(u_{1}+v_{1}\right)
+\end{align*}
+}
+
+\subsubsection{Proving the validity of subspaces}
+\par{The best way to prove the validity of a subspace is to check the 3 criteria as listed above.}
+\begin{itemize}
+	\item{The origin, or zero vector $\left(0,0,0....0_{n}\right)$ is included for $S\in\mathrm{R}^{n}$. This is often the easiest check}
+	\item{$S$ must be closed under addition. This means if you take 2 vectors within the subset, the result must still be within the subspace.}
+	\item{$S$ must be closed under scalar multiplication. This means if you take a vector in the set and multiply it by any scalar, it must stay within the set.}
+\end{itemize}
+\subsubsection{How to check each condition}
+\par{Example: Given $S\in\mathrm{R^{3}}, x+2y-3z=0$}
+\begin{enumerate}
+	\item{The first step is to decide whether the origin/$\vec{0}$ is in the subset. The easiest way to check is to substitute the $\vec{0}$ of the current arity into the linear equation and see if it holds up. \textbf{Here the 0 vector is in the set because:}}
+\begin{align*}
+	& \left(0,0,0\right)\rightarrow x+2y-3z=0 \\
+	& \left(0\right)+2\left(0\right)-3\left(0\right)=0 
+\end{align*}
+\item{Next we must show that if we take any 2 solutions, and we add them together, we get another solution within the set. Start by defining 2 elements within the set, let $\vec{u}=\left(u_{1},u_{2},u_{3}\right)\in S$ and let $\vec{v}=\left(v_{1},v_{2},v_{3}\right)\in S$ We do not know anything about u or v, except they are both vectors that exist in $S$. They must exist in  $S$ as that is they are hypothetical solutions of S.}
+	\begin{enumerate}
+		\item{ let: $\vec{u}=\left(u_{1},u_{2},u_{3}\right)\in S$ and let $\vec{v}=\left(v_{1},v_{2},v_{3}\right)\in S$ }
+		\item{ then: $u_{1}+u_{2}-3u_{3}=0$ and $v_{1}+v_{2}-3v_{3}=0$  due to $\vec{u}$ and $\vec{v}\in S$ }
+		\item{ The above line shows that the 2 vectors we are using are in the set of solutions of $S$ }
+		\item{ Check if: $\vec{u}+\vec{v}=\left(u_{1}+v_{1},u_{2}+v_{2},u_{3}+v_{3}\right)$ Gives the solution of the equation we are testing}
+		\item{ Demonstrate the following is equal to zero, but do not state it beforehand.}
+		\item{ $\vec{u}+\vec{v}=u_{1}+v_{1}+2\left(u_{2}+v_{2}\right)-3\left(u_{3}+v_{3}\right)$}
+		\item{ After rearranging, we get: $\vec{u}+\vec{v}=u_{1}+u_{2}-3u_{3}+v_{1}+v_{2}-3v_{3}$}
+		\item{ Which we determined in step 2 to be $\vec{u}+\vec{v}=0+0=0$}
+		\item{ We have deduced that both u and v are in the set, and that u+v are also in the set, therefore it is closed under addition.}
+	\end{enumerate}
+	\item{Next we must show that if we take any scalar value and multiply it by any vector, in this case we can use $u$ from the previous step, as we have already proved it is in the set  $S$, that it remains within the set of solutions. }
+	\begin{enumerate}
+		\item{let $\alpha$ be any scalar multiple}
+		\item{$\alpha\vec{u}$}
+		\item{$\vec{u}=0$ as shown above, as it is a solution}
+		\item{$\alpha 0=0$}
+	\end{enumerate}
+	\item{The solution of the previous did form a subspace}
+\end{enumerate}
+\par{Consider the next linear equation $x+2y-3z=10$. This fails the first test of not containing the origin/0 vector. Even if we try to test for closure under addition, we get that that test fails too. This is because the right hand side of the equation is non-zero, i.e: there is a constant within the linear equation, i.e, the solution is non homogeneous. The solutions to a homogeneous system of linear equations \textbf{always forms a subspace}. The inverse of that is also true, in that \textbf{the solutions to a non-homogeneous set of linear equations is never a subspace}.}
+\subsection{What are all the subspaces of $\mathbb{R}^{2}$?}
+\begin{itemize}
+	\item{$S=\lbrace\left(0,0\right)\rbrace$ is a subspace, as it contains the 0 vector and is closed both under addition and multiplication.}
+	\item{Any straight line going through the origin is a subspace, as it contains the origin by design. If you added any 2 points on the line, as the gradient remains the same, it will just end up somewhere else on the line. This is the same for a scalar multiple}
+	\item{$\mathbb{R}^{2}$ Itself, given enough points added/large enough scalar, we can 'tile' the whole of $\mathbb{R^{2}}$, therefore itself must be a subspace.}
+\end{itemize}
+\subsubsection{What are all the subspaces of $\mathbb{R}^{3}$?}
+\par{A similar argument is made for $\mathbb{R}^{3}$ as for $\mathbb{R}^{2}$}
+\begin{itemize}
+	\item{The origin itself: $S=\lbrace(\left(0,0,0\right)\rbrace)$}
+	\item{Planes through the origin}
+	\item{Lines through the origin}
+	\item{The whole of $\mathbb{R}^{3}$}
+\end{itemize}
+\subsection{Linear combinations}
+\par{A linear combination of $v$ and $w$ is any vector in the form: 
+	\[
+	\alpha v+\beta w
+	\] 
+Where $\alpha,\beta\in\mathbb{R}$}
+\subsection{Span and Spanning set}
+\par{Given: $T=\lbrace(v_{1},v_{2},v_{3}...v_{k}\rbrace)$, the \textbf{span} of $T$ is:
+\[
+	\text{span($T$)}=\lbrace\left(\alpha_{1}v_{1}+\alpha_{2}v_{2}+\alpha_{3}v_{3}...\alpha_{k}v_{k}\right): a_{i}\in\mathbb{R}\rbrace
+\] 
+The span of $T$ is exactly the set of all linear combinations that can be formed from the vectors in $T$, which forms a subspace (The span of anything is a subspace, and the Span of T is the smallest subspace containing T). 
+
+The span of an empty set is defined to be 0: span$\left(\emptyset\right)=0$.
+}
+\subsection{Testing For Membership Of Span And The Spanning Set}
+\par{To test for membership of 1 vector in a span, we simply use a set of linear equations. E.g:}
+Is: $\left(1,0,1\right)\in\text{span}\left(\lbrace\left(1,2,3\right),\left(2,3,4\right)\rbrace\right)$ ?
+$$\alpha\left(1,2,3\right)=\beta\left(2,3,4\right)=\left(1,0,1\right)$$
+$$
+\begin{pmatrix}
+	\alpha +2\beta=1 \\
+	2\alpha+3\beta=0 \\
+	3\alpha+4\beta=1 \\
+\end{pmatrix}
+$$
+Remember the span returns the full set, whereas the spanning set refers to the set which builds the span.
+
 
 \end{document}
-
-
 
