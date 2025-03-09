@@ -8,7 +8,7 @@
 
 \begin{document}
 \maketitle
-\chapter{1 (Special Relativity.)}
+\chapter{Special Relativity}
 \section{Definitions}
 \begin{itemize}
 	\item{Observer: An observer is an individual armed with measuring equipment like rulers and timers}
@@ -256,6 +256,42 @@ Note: massive particles can have $\vec{p}=0$ by being at rest, but all particles
 	\vec{P}_{T}=P_{1}+P_{2}+P_{3}...P_{n} \\
 	\vec{E}_{T}=E_{1}+E_{2}+E_{3}...E_{n} \\
 \end{align*}
+
+\chapter{Resonance}
+\section{Harmonic Oscillator}
+\par{Consider some object dangling from some ceiling from a spring. First, consider the spring to not be in motion, in its equilibrium position, where the sum of the forces it 0, the tension is balanced by the downwards force of gravity. Lets then suppose our coordinate system has the positive x direction going straight up, and the negative x direction going straight down. If we pull the spring back, it will experience a Restoring force, here denoted as: \[
+F_{restoring}=-kx
+\]
+Where the negative sign reminds us that this force acts in the opposite direction of the original force. If we then replace $F$ with its definition of mass times acceleration, we get:  \[
+m\frac{d^{2}x}{dt^{2}}=-kx
+\] If we ignore the constants for a second, we get the following differential equation: \[
+\frac{d^{2}x}{dt^{2}}=-x
+\], Which we can guess the solution to be $x=\cos\left(t\right)$. However, this does not include the coefficients $k$ and $m$, which are necessary, instead, we consider a horizontal dilation in the cosine graph.
+\begin{align*}
+	& m\frac{d^{2}x}{dt^{2}}=-kx \\
+	& \frac{d^{2}x}{dt^{2}}=-\frac{k}{m}x \\
+	& \text{consider $\omega_{0}$ to be the angular frequency, then:} \\
+	& \text{let } x=A\cos\left(\omega_{0}t\right) \\
+	& \frac{dx}{dt}=-A\omega_{0}\sin\left(\omega_{0}t\right) \\
+	& \frac{d^{2}x}{dt^{2}}=-A\omega_{0}^{2}\cos\left(\omega_{0}t\right) \\
+	& \frac{k}{m}=\omega_{0}^{2}
+\end{align*}
+
+Here, the omega dilates the time (in the horizontal direction of the graph). The period of a usual cosine function is $2\pi$, and as it is being dilated by a factor of $\omega_{0}, \left(\frac{1}{\omega_{0}}\right)$ then: \[
+T=2\pi\sqrt{\frac{m}{k}}
+\] What this means physically, is that due to a greater mass, the inertia will be greater, leading to an even greater period. If the spring was stronger, $k$ would be larger, and thus the period shorter, and the time taken, shorter.
+
+The starting position of the spring is dependent on when we first observe the spring. This can mean that there is a horizontal translation, as we may view the spring being launched up, or coming down. \[
+x=A\cos\left(\omega_{0}t+\Delta\right)
+\] We can rearrange this to be a sum of 2 trigonometric functions: \[
+x=A\left(\cos\left(\omega_{0}t\right)\cos\left(\Delta\right)-\sin\left(\omega_{0}t\right)\sin\left(\Delta\right)\right)
+\] Where:
+\begin{itemize}
+	\item{$A$: is the amplitude of the function, or the \textbf{vertical dilation}}
+	\item{$\Delta$: is the phase shift, or the \textbf{horizontal translation}}
+	\item{$\omega$: is the \textbf{angular frequency}}
+\end{itemize}}
+
 
 
 
