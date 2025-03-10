@@ -2,7 +2,7 @@
 
 %preamble stuff here :3
 \usepackage{amsmath}
-\usepackage[margin=1cm,nohead]{geometry}
+\usepackage[margin=2cm,nohead]{geometry}
 \author{Pearl Lin 24465993}
 \title{Phys Notes}
 
@@ -290,9 +290,77 @@ x=A\left(\cos\left(\omega_{0}t\right)\cos\left(\Delta\right)-\sin\left(\omega_{0
 	\item{$A$: is the amplitude of the function, or the \textbf{vertical dilation}}
 	\item{$\Delta$: is the phase shift, or the \textbf{horizontal translation}}
 	\item{$\omega$: is the \textbf{angular frequency}}
-\end{itemize}}
-
-
+\end{itemize}
+We can then collapse this by replacing the constants $\cos\left(\Delta\right)$ and $\sin\left(\Delta\right)$ 
+\begin{align*}
+	& \text{let } B=A\cos\left(\Delta\right) \\
+	& \text{let } B=-A\sin\left(\Delta\right) \\
+	& x=A\left(\cos\left(\omega_{0}t\right)\cos\left(\Delta\right)-\sin\left(\omega_{0}t\right)\sin\left(\Delta\right)\right) \\
+	& x=B\cos\left(\omega_{0}t\right)+C\sin\left(\omega_{0}t\right)
+\end{align*}}
+\subsection{Initial Conditions}
+\par{The values B and C from the previous equation as well as A are whats known as the initial conditions, values that are determined at the first instance of observation.Imagine an initial time, position and velocity. $t=0, x=x_{0}, v=v_{0}$. If we again consider x and v as its derivative, we get: }
+\begin{align*}
+	x&=B\cos\left(\omega_{0}t\right)+C\sin\left(\omega_{0}t\right) \\
+	v=\frac{dx}{dt}&=-\omega_{0}B\sin\left(\omega_{0}t\right)+\omega_{0}C\cos\left(\omega_{0}t\right) \\
+\end{align*}
+\par{When we plug in our intial conditions of $t=0, x=x_{0}, v=v_{0}$, we reduce the sine and cosine down to 1 and zero: }
+\begin{align*}
+	& x=B\cos\left(\omega_{0}\left(0\right)\right)+C\sin\left(\omega_{0}\left(0\right)\right) \\
+	& v=\frac{dx}{dt}=-\omega_{0}B\sin\left(\omega_{0}\left(0\right)\right)+\omega_{0}C\cos\left(\omega_{0}\left(0\right)\right) \\
+	& \implies x=B\left(1\right)+C\left(0\right) \\
+    & \implies v=-\omega_{0}B\left(0\right)+\omega_{0}C\left(1\right) \\
+	& x=B \\
+	& v=\omega_{0}C \\
+\end{align*}
+\par{As the above are only true during the initial conditions, x and v should be replaced too: }
+\begin{align*}
+	& x_{0}=B \\
+	& v_{0}=\omega_{0}C \\
+	& t=0
+\end{align*}
+\subsection{Conservation of energy}
+\par{As we are only considering a frictionless system, energy should be conserved. When given the kinetic and potential energy formulae below:}
+\begin{align*}
+	& U=\frac{1}{2}kx^{2} \\
+	& T=\frac{1}{2}mv^{2}
+\end{align*}
+\par{We can plug in our subsitute for x and v from above into those two generic formulae:}
+\begin{align*}
+	& U=\frac{1}{2}kA^{2}\cos^{2}\left(\omega_{0}t+\Delta\right) \\
+	& T=\frac{1}{2}m\omega_{0}^{2}A^{2}\sin^{2}\left(\omega_{0}t+\Delta\right)
+\end{align*}
+\par{Both of these energies are non-constant, but added together, they form a constant total energy.\[
+T+U=\frac{1}{2}kA^{2}\cos^{2}\left(\omega_{0}t+\Delta\right) +\frac{1}{2}m\omega_{0}^{2}A^{2}\sin^{2}\left(\omega_{0}t+\Delta\right)
+\] And given the earlier established $k=m\omega_{0}^{2}$ \[
+T+U=\frac{1}{2}m\omega_{0}^{2}A^{2}\cos^{2}\left(\omega_{0}t+\Delta\right) +\frac{1}{2}m\omega_{0}^{2}A^{2}\sin^{2}\left(\omega_{0}t+\Delta\right)
+\] Which can then be factorised: \[
+T+U=\frac{1}{2}m\omega_{0}^{2}A^{2}\left(\cos^{2}\left(\omega_{0}t+\Delta\right)+\sin^{2}\left(\omega_{0}t+\Delta\right)\right)
+\] and simplified using the trigonometric identity $\cos^{2}\left(x\right)+\sin^{2}\left(x\right)=1$ \[
+T+U=\frac{1}{2}m\omega_{0}^{2}A^{2}\left(1\right)
+\] And now we can see that the total energy is constant (Conserved) and independent of time. }
+\subsection{Forced Harmonic Oscillator}
+\par{Forced Harmonic Oscillator refers to a harmonic oscillator that is being affected by an external force. The general differential equation therefore has an extra force term added to it: \[
+m\frac{d^{2}x}{dt^{2}}=-kx+F\left(t\right)
+\]}
+\subsection{Complex Numbers and Harmonic Motion}
+\subsubsection{Complex Numbers}
+\par{Complex numbers come in the form $z=x+iy, i^{2}=-1$. 'x' is known as the real part, sometimes denoted by $\mathrm{Re}\left[z\right]=x$ and 'iy' is known as the complex component, denoted by $\mathrm{Im}\left[z\right]=iy$. 'z' can also be written in the modulus/argument form, $z=re^{i\theta}$, where 'r' is known as the modulus, $|z|=r$ and  $\theta$ is the argument, denoted $\mathrm{Arg}\left[z\right]=\theta$. 'r' and '$\theta$' can be related through $r^{2}=x^{2}+y^{2}$, which can also be written $r^{2}=\left(x+iy\right)\left(x-iy\right)=zz*$, with the 'z*' being known as the complex conjugate ($\left(x-iy\right)$). It is also good to know that $\tan\left(\theta\right)=\frac{y}{x}$. If we again subsitute x as $\cos\left(\theta\right)$ and y as $\sin\left(\theta\right)$, we get $r\cos\left(\theta\right)+i\sin\left(\theta\right)$. This can give us Euler's formula:}
+\begin{align*}
+	& z=x+iy \\
+	& \implies r\left(\cos\left(\theta\right)+i\sin\left(\theta\right)\right)= re^{i\theta} \\
+	& \implies \left(\cos\left(\theta\right)+i\sin\left(\theta\right)\right)= e^{i\theta} 
+\end{align*}
+\par{Euler's formula allows us to connect exponentials to trigonometric functions, which is extremely useful for solving/simplifying the solving process of differential equations regarding trig functions. }
+\subsection{Frictional Terms}
+\par{Apart from the force, there is also friction which is affecting the the term. Imagine a mass moving horizontally over a puddle of oil. The faster the mass moves, the greater the oil resists, and we say that Friction is \textbf{proportional to the speed}.}
+\begin{align*}
+ 	& m\frac{d^{2}x}{dt^{2}}+kx=F_{applied}+F_{friction} \\
+	& F_{friction}=-bv \\
+	& F_{friction}=-b\frac{dx}{dt} \\
+	& \implies m\frac{d^{2}x}{dt^{2}}+kx=F_{applied}-b\frac{dx}{dt} \\
+	& \implies m\frac{d^{2}x}{dt^{2}}+b\frac{dx}{dt}+kx=F_{applied} \\
+\end{align*}
 
 
 \end{document}
