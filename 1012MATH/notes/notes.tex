@@ -283,7 +283,7 @@ Testing if a subspace does not contain a zero, is a fast way to test if a subspa
 	\alpha v+\beta w
 	\] 
 Where $\alpha,\beta\in\mathbb{R}$}
-\subsection{Span and Spanning set}
+\section{Span and Spanning set}
 \par{Given: $T=\lbrace(v_{1},v_{2},v_{3}...v_{k}\rbrace)$, the \textbf{span} of $T$ is:
 \[
 	\text{span($T$)}=\lbrace\left(\alpha_{1}v_{1}+\alpha_{2}v_{2}+\alpha_{3}v_{3}...\alpha_{k}v_{k}\right): a_{i}\in\mathbb{R}\rbrace
@@ -328,7 +328,7 @@ Remember the span returns the full set, whereas the spanning set refers to the s
 	& \vec{v_{2}}=\left(0,0,1,-1\right) \\
 	& \left(x,2x,z,-z\right)=\left(x,2x,0,0\right)+\left(0,0,z,-z\right)
 \end{align*}
-\subsection{Linear Independence}
+\section{Linear Independence}
 \par{A set of vectors is linearly dependent if one of them is a linear combination of the others. E.g: \[
 \lbrace\vec{v_{1}}, 2\vec{v_{1}}\rbrace
 \] We see here that the 2nd coordinate is just 2 times the first coordinate. A set of size 2 is linearly dependent only when one is a multiple of the other.}
@@ -345,7 +345,131 @@ The solution must always equal $\left(0,0,0\right)$ as it should be homogeneous
 	\item{A subset of a linearly independent set is linearly independent.}
 	\item{A superset of a linearly dependent set is dependent.}
 \end{itemize}
-\par{This is quite common sense as if you have a dependent set, adding something extra won't change it to be independent. }
+\par{This is quite common sense as if you have a dependent set, adding something extra won't change it to be independent. Another idea is that the span would not change if a dependent vector is removed from the set of vectors. 
+
+Suppose we have a set 'S' with multiple vectors within, but $v_{1}$ is linearly dependent on a linear combination of the other vectors: \[
+S=\lbrace v_{1}, v_{2}, v_{3}... v_{k}\rbrace 
+\] \par{Then, as $v_{1}$ is a linear combination of some other vectors: \[
+ v_{1}=\alpha_{1}v_{1}+...\alpha_{k}v_{k}
+\] We can see that by removing $v_{1}$ the span of S will not change, as whatever $v_{1}$ can make can already be made by the vectors which make up $v_{1}$: \[
+\mathrm{span}\left(S\right)=\mathrm{span}\left(S\backslash\vec{v_{1}}\right)
+\] }
+\begin{itemize}
+	\item{Linearly dependent set}
+		\begin{itemize}
+			\item{Set has \textbf{redundancy}}
+			\item{Can remove dependent vectors without changing the span (as explained above}
+		\end{itemize}
+	\item{Linearly independent set}
+		\begin{itemize}
+			\item{No redundancy}
+			\item{every vector is needed}
+		\end{itemize}
+\end{itemize}
+\section{Basis}
+\par{Let $S$ be a subspace of $\mathbb{R}^{n}$, then a \textbf{basis} for $S$ is a set $B$ of vectors in $S$ such that 
+\begin{itemize}
+	\item{$S=\mathrm{span}\left(B\right)$}
+	\item{$B$ is linearly independent}
+\end{itemize}
+B shall contain exactly the vectors you need to \textbf{span} $S$, or to create every element within $S$. A basis is the \textbf{most efficient way} to specify a subspace. Given a basis, you can determine which vectors are in the span of that basis or not. }
+\subsubsection{The Standard Basis}
+\par{The standard basis is the most simple basis for $\mathbb{R}^{n}$, given by:}
+\begin{align*}
+	& e_{1}=\left(1,0,0,....,0\right) \\
+	& e_{2}=\left(0,1,0,....,0\right) \\
+	& e_{3}=\left(0,0,1,....,0\right) \\
+	& e_{n}=\left(0,0,0,....,1\right) \\
+\end{align*}
+\subsection{Dimension}
+\par{Every basis for a subspace $S$ has the  \textbf{same number} of vectors. This number is called the dimension of $S$, denoted simply as  $\mathrm{dim}\left(S\right)$. E.g: anything spanned by 1 vector is an one-dimensional object, everything spanned by 2 vectors is a 2-dimensional object.
+
+A basis for a subspace satisfies the "Goldilocks property".
+\begin{itemize}
+	\item{It is only \textbf{just big enough} to be a spanning set}
+	\item{it is only \textbf{just small enough} to be independent}
+\end{itemize}
+Let $S$ be a $k$-dimensional subspace of $\mathbb{R}^{n}$. Then:
+\begin{itemize}
+	\item{Any set of \textbf{less than} k is not a spanning set of $S$}
+	\item{Any spanning set for $S$  \textbf{contains} a basis for $S$}
+	\item{Any spanning set for $S$ of size \textbf{exactly} $k$ is a basis for $S$}
+\end{itemize}
+}
+\subsubsection{Example}
+\par{Give a basis for the solution space of the SLE: }
+\begin{align*}
+	& a+b+2c+d-e=0 \\
+	& 2a+2b+5c+d-2e=0 \\
+\end{align*}
+\[
+	\left[
+	\begin{array}{ccccc|c}
+		1 & 1 & 2 & 1 & -1 & 0 \\
+		2 & 2 & 5 & 1 & -2 & 0
+	\end{array}
+	\right]
+\] 
+\par{A single row operation gives the following: $R2\leftarrow R2-2R1$}
+\[
+	\left[
+		\begin{array}{ccccc|c}
+			1 & 1 & 2 & 1 & -1 & 0 \\
+			0 & 0 & 1 & -1 & 0 & 0
+		\end{array}
+	\right]
+\] 
+\par{From the above, we see a and c (first and 3rd column) are basic variables, whereas b, d and e are non-basic/free variables. We now do back substitution where :
+\begin{itemize}
+	\item{e is a parameter}
+	\item{d is a parameter}
+	\item{c is a basic variable, which from the 2nd row can be expressed as: $c-d=0$, therefore  $c=d$}
+	\item{a is basic, so from the first row, we get $a+b+2c+d-e=0$, as $c=d$, we get  $a=e-b-3d$}
+\end{itemize}
+Every variable is now expressed as a free variable. There are 3 free variables, so the solution space is 3 dimensional. $S=\lbrace\left(e-b-3d, b, d, d, e\right)|b,d,e\in\mathbb{R}\rbrace$}. The parametric form gives us the basis in the following: 
+\begin{align*}
+& S=\lbrace\left(e-b-3d, b, d, d, e\right)|b,d,e\in\mathbb{R}\rbrace \\
+& =b\left(-1,1,0,0,0\right)+d\left(-3,0,1,1,0\right)+e\left(1,0,0,0,1\right)
+\end{align*}
+This is because for b, the first term contains a negative b, and the 2nd term a positive b, for d, the first term contains a negative 3, and the 3rd and 4th terms, a positive d, and finally for e: the first and last terms contain an e. Because of back substitution, they are forced to be linearly independent, they span the whole set, so they are the basis for the solution space: \[
+B =\lbrace\left(-1,1,0,0,0\right),\left(-3,0,1,1,0\right),\left(1,0,0,0,1\right)\rbrace
+\]
+\chapter{Matrix Algebra}
+\par{Matricies can be added, multiplied by other matrices or by scalars or transposed. }
+\subsection{Transposition}
+\par{To transpose a matrix (denoted by the operation $\left(AB\right)^{T}$, we take each row and write it as its corresponding column}
+\subsection{Addition}
+\par{Matricies can be added simply like vector addition}
+\subsection{Matrix Multiplication}
+\section{Basic square Matricies}
+\par{There are 2 square matrices that are defined}
+\subsection{The 'zero' matrix}
+\par{The zero matrix is just any matrix made up of only '0'. It is denoted by $O_{n}$, where n is the number of rows and columns}
+\subsection{The 'identity' matrix}
+\par{The identity matrix is defined as a square matrix of a 1 in the diagonal line: (identity matrix of size 3, or $I_{n}$)}
+\[
+	\left[
+		\begin{matrix}
+			1 & 0 & 0 \\
+			0 & 1 & 0 \\
+			0 & 0 & 1 
+		\end{matrix}
+	\right]
+\] 
+\par{Reminder that the identity matrix acts as a '1' in the matrix theory, whereas the zero-matrix acts as a zero. This means that identity matrices' multiplication are commutative: }
+\[
+A\cdot I=I\cdot A=A
+\] Where A is any matrix and I is the identity matrix of the same order \[
+A+O=O+A=A
+\] 
+\subsection{Special Square Matricies}
+\begin{itemize}
+	\item{A matrix is \textbf{symmetric} if $A=A^{T}$}
+	\item{A matrix is \textbf{skew-symmetric} if $A=-A^{T}$}
+	\item{A matrix is \textbf{upper-triangular} if $A_{ij}=0$ for $i>j$}
+	\item{A matrix is \textbf{lower-triangular} if $A_{ij}=0$ for $i<j$}
+	\item{A matrix is \textbf{diagonal} if $A_{ij}$ for all $i\nej$}
+\end{itemize}
 
 \end{document}
 
