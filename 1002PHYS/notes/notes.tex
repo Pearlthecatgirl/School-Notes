@@ -448,6 +448,61 @@ V=L\frac{dI}{dt}
 \] The proportionality constant $L$ is the inductance, in Henrys (H). Inductance refers to the ability of an element to store energy as a magnetic field when a current is passing through it. If we realise current is the derivative of charge, the derivative of current is the 2nd order derivative of charge: \[
 V=L\frac{d^{2}q}{dt^{2}}
 \] }
+\subsection{Kirchoff's Laws}
+\subsubsection{Kirchoff's Junction Law}
+\par{Kirchoff's Junction law states that: The sum of the currents entering any junction (i.e a point on the circuit where the current can split) in a circuit must equal the sum of currents leaving that junction. \[
+\sum_{in}^{}{I}=\sum_{out}^{}{I}
+\] This is essentially conservation of charge.}
+\subsubsection{Kirchoff's Loop Law}
+\par{Kirchoff's Loop law states that: The sum of the charges in electric potential across all elements in a complete circuit loop must be zero. \[
+\sum_{loop}^{}{\Delta V}=0
+\] This can be written as: \[
+V_{total}-V_{1}-V_{2}-V_{3}...-V_{n}=0
+\] This is essentially conservation of energy.}
+\subsection{LC Circuit}
+\par{Consists of a capacitor and a inductor, and initially, the capacitor is charged. We consider no loss in the circuit (ideal). The LC circuit produces an oscillation of charge, bouncing energy being stored in as potential difference (electrical energy) in the capacitor vs as magnetic field (magnetic energy) in the inductor. This is similar to how in the spring, the energy is being bounced between springs' potential energy and the mass' kinetic energy. 
+\begin{itemize}
+	\item{Initially, There is a build up of charge on one of the plates.}
+	\item{As soon as the inductor is connected, there will be a current flowing through the circuit.}
+	\item{The inductor resists change in current, current cannot instantaneously change with an inductor sitting there, so the current builds up}
+	\item{As the current builds, the magnetic field induced by the inductor builds, all the way until the capacitor is drained, and all of the capacitor's stored energy is now stored as magnetic energy in the inductor.}
+	\item{As the inductor is building, however, there is now a gradual build up of electrons flowing towards the other end of the capacitor. This means as soon as the current starts to slow, the magnetic fields around the inductor weaken. }
+	\item{This continues until the inductor no longer has stored energy, and the capacitor is now charged in the opposite way round to the initial state, where the positive side is the opposite of its initial. All the energy is now stored as electrical energy. }
+	\item{The circuit will now go the opposite direction, discharging from the capacitor to the inductor in the opposite direction, having the same effect it had the first time around. }
+\end{itemize}
+From this, we obtain the DE via Kirchoff's loop law: \[
+V_{Inductor}+V_{Capacitor}=0
+\]. Replacing $V_{Inductor}$ by $\frac{d^{2}q}{dt^{2}}L$ and $V_{Capacitor}$ by $\frac{q}{C}$, we get: \[
+\frac{d^{2}q}{dt^{2}}L+\frac{q}{C}=0
+\], very similar to the spring version without any friction/damping.From earlier, we know this has the general solution of \[
+x=A\cos\left(\omega_{0}t+\Delta\right)
+\] replacing displacement with charge, we get: \[
+q\left(t\right)=A\cos\left(\omega_{0}t+\Delta\right)
+\] Where the natural frequency is given by: $\omega_{0}^{2}\frac{1}{LC}$, or \[
+\omega_{0}=\frac{1}{\sqrt{LC}}
+\] As we are measuring $q$, the charge of the capacitor, the equation for Voltage follows:  \[
+V=\frac{q}{C}
+\] and hence the voltage would be: \[
+V\left(t\right)=\frac{A}{C}\cos\left(\omega_{0}t+\Delta\right)
+\] As current is the first derivative, the formula is: \[
+I\left(t\right)=-\omega_{0}A\sin\left(\omega_{0}t+\Delta\right)
+\] }
+\subsubsection{Energy of an LC Circuit}
+\par{The energy of an LC circuit should stay constant. Remember that energy stored in a capacitor is given: \[
+U=\frac{1}{2}CV^{2}
+\] $U$ is the energy, $C$ is capacitance and $V$ is voltage. To get the energy stored in an inductor, we first start with the power: \[
+P=VI
+\] Power is equal to voltage times current. Considering power as the rate of change of energy and Voltage of an inductor as shown earlier to be: $L\frac{dI}{dt}$, we rearrange power to be: \[
+P=\left(L\frac{dI}{dt}I\right)
+\] \[
+\frac{dU}{dt}=\left(L\frac{dI}{dt}\right)I
+\] Then we consider the total energy to be: \[
+U=\int_{}^{}{\left(L\frac{dI}{dt}\right)I}\mathrm{dt}
+\] When the $dt$s cancel and we move the constant L out, we get  \[
+U=L\int_{}^{}{I}\mathrm{dI}
+\] \[
+U=L\frac{1}{2}I^{2}
+\] This is analogous to the kinetic energy of the mass. }
 
 
 
