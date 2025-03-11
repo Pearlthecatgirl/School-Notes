@@ -353,7 +353,7 @@ m\frac{d^{2}x}{dt^{2}}=-kx+F\left(t\right)
 \end{align*}
 \par{Euler's formula allows us to connect exponentials to trigonometric functions, which is extremely useful for solving/simplifying the solving process of differential equations regarding trig functions. }
 \subsection{Frictional Terms}
-\par{Apart from the force, there is also friction which is affecting the the term. Imagine a mass moving horizontally over a puddle of oil. The faster the mass moves, the greater the oil resists, and we say that Friction is \textbf{proportional to the speed}.}
+\par{Apart from the force, there is also friction which is affecting the term. Imagine a mass moving horizontally over a puddle of oil. The faster the mass moves, the greater the oil resists, and we say that Friction is \textbf{proportional to the speed}.}
 \begin{align*}
  	& m\frac{d^{2}x}{dt^{2}}+kx=F_{applied}+F_{friction} \\
 	& F_{friction}=-bv \\
@@ -361,6 +361,94 @@ m\frac{d^{2}x}{dt^{2}}=-kx+F\left(t\right)
 	& \implies m\frac{d^{2}x}{dt^{2}}+kx=F_{applied}-b\frac{dx}{dt} \\
 	& \implies m\frac{d^{2}x}{dt^{2}}+b\frac{dx}{dt}+kx=F_{applied} \\
 \end{align*}
+\par{Where: 
+\begin{itemize}
+	\item{k is the spring constant}
+	\item{b is the damping constant}
+	\item{m is the mass}
+	\item{x is displacement and F is force}
+\end{itemize}}
+\subsubsection{Solving}
+\par{To solve this DE, we can consider the trick regarding complex numbers, in order to turn differentiation of trig functions to differentiation of exponential functions. 
+\begin{itemize}
+	\item{First we simplify the above by dividing through the function with mass: 
+			\[
+				m\frac{d^{2}x}{dt^{2}}+b\frac{dx}{dt}+kx=F
+			\] \[
+				\frac{d^{2}x}{dt^{2}}+\frac{b}{m}\frac{dx}{dt}+\frac{k}{m}x=\frac{F}{m}
+			\] We let 2 new constants take the place of the ratio between the damping constant and mass, and the ratio between the spring constant and mass $\gamma=\frac{b}{m}$ and as defined earlier $\omega_{0}^{2}=\frac{k}{m}$. \[
+				\frac{d^{2}x}{dt^{2}}+\gamma\frac{dx}{dt}+\omega_{0}^{2}x=\frac{F}{m}
+			\] 
+	 }
+	\item{First we consider the displacement and force as complex numbers. This is only a trick, there is no real world meaning of complex numbers.\[
+				\frac{d^{2}\hat{x}}{dt^{2}}+\gamma\frac{d\hat{x}}{dt}+\omega_{0}^{2}\hat{x}=\frac{\hat{F}}{m}
+		\] We can then consider $\hat{x}$ in the exponential form:  \[
+		\hat{x}=\hat{x}_{0}e^{i\omega t}
+		\] Then the derivative and 2nd derivative shall be: \[
+		\frac{d}{dx}\hat{x}=i\omega\hat{x} 
+		\] \[
+		\frac{d^{2}}{dt^{2}}\hat{x}=\left(i\omega\right)^{2}\hat{x}	
+		\] Finally, we can plug those into our DE and get: \[
+		\left(i\omega\right)^{2}\hat{x}+\gamma\left(i\omega\right)\hat{x}+\omega_{0}^{2}\hat{x}=\frac{\hat{F}}{m}
+		\]}
+	\item{We then rearrange for $\hat{x}$:  \[
+				\hat{x}=\frac{1}{m\left(\omega_{0}^{2}-\omega^{2}+i\gamma\omega\right)}\hat{F}
+	\] If we consider the coefficient of F hat as some constant $R$, we can calculate the modulus and phase angle of r as $\rho$ and $\theta$\[
+	R=\frac{1}{m\left(\omega_{0}^{2}-\omega^{2}+i\gamma\omega\right)}=\rho e^{i\theta}
+\] If we put this into our complex equation and replace in what $\hat{F}$ is, \[
+\hat{x}=\rho e^{i\omega}\hat{F}=
+\hat{x}=\rho e^{i\omega}F_{0}e^{i\omega t}
+\] Where $F_{0}$ is the modulus of F and $\omega t$ is the argument. We can then collect the exponentials together: \[
+\hat{x}=\rho F_{0}e^{i\left(\theta+\omega t\right)}
+\]} 
+	\item{When we consider the real component: \[
+			\hat{x}=\rho F_{0}e^{i\left(\omega t+\theta\right)}
+\] \[
+			\hat{x}=\rho F_{0}\cos\left(\omega t+\theta\right)+i\sin\left(\omega t+\theta\right)
+\] \[
+			\mathrm{Re}\left[\hat{x}\right]=\rho F_{0}\cos\left(\omega t+\theta\right)
+	\] From this, we can see that $\rho$ gives us the amplitude of the responding oscillation while $\theta$ gives us the phase shift of the response.}
+\end{itemize}}
+\subsection{Electrical Resonance}
+\par{The differential equation in electrical resonance is: $L\frac{d^{2}q}{dt}+R\frac{dq}{dt}+\frac{1}{C}q=V\left(t\right)$ Consisting of the following: 
+\begin{itemize}
+	\item{q is charge, analogous to displacement $\left(x\right)$}
+	\item{$V\left(t\right)$ is voltage, analogous to force $\left(F\left(t\right)\right)$}
+	\item{C is capacitance, analogous to the inverse of the spring stiffness/constant $\frac{1}{k}$}
+	\item{R is resistance, analogous to friction, $\left(b\right)$}
+	\item{L is inductance, analogous to the mass $\left(m\right)$}
+\end{itemize}
+It is necessary to note Ohm's law, given normally by: \[
+V=IR
+\] however, we must formally say that current $I$ is the first order derivative of charge: \[
+I=\frac{dq}{dt}
+\] therefore, Ohm's law can be written: \[
+V=R\frac{dq}{dt}
+\]analogous to the previous: \[
+F_{friction}=b\frac{dx}{dt}
+\] 
+}
+\subsubsection{Capacitor}
+\par{A capacitor is an object with 2 parallel metal plates and when they are connected to a circuit with a current flowing, there will be a charge build up on one plate, with an opposite charge build up on the other plate. The difference in charge causes a potential difference (difference between charge) and an electric field. The potential difference between the plates are given by: \[
+V=Ed
+\] Where $V$ represents the voltage, E is the electric field between, and d is the distance between the plates. The electric field is simply the charge density divided by the constant $\epsilon_{0}$ \[
+V=\frac{\sigma}{\epsilon_{0}}
+\] And the charge density is just \[
+\sigma=\frac{q}{A}
+\] Where A is the area of \textbf{of each plate}. Putting everything together, we can see that the Voltage is determined by the geometry of the plate: \[
+V=\frac{qd}{A\epsilon_{0}}
+\] However, if we separate q, the coefficient of q is defined as $\frac{1}{C}$  \[
+V=\frac{1}{C}q
+\]  Where c is the capacitance of the circuit element, rearranged to be: \[
+C=\frac{q}{V}
+\] and measured in Farads (F).}
+\subsubsection{Inductor}
+\par{An inductor is a coil, of which is not insulated against itself, so there forms a magnetic field which interacts with the current in the other coils. In alternating current (AC), this induces a back emf, working against the current. The voltage of back emf is \textbf{proportional to the rate of change of the current flowing through it} \[
+V=L\frac{dI}{dt}
+\] The proportionality constant $L$ is the inductance, in Henrys (H). Inductance refers to the ability of an element to store energy as a magnetic field when a current is passing through it. If we realise current is the derivative of charge, the derivative of current is the 2nd order derivative of charge: \[
+V=L\frac{d^{2}q}{dt^{2}}
+\] }
+
 
 
 \end{document}
