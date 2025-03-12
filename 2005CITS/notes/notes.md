@@ -10,7 +10,7 @@ for (Type element : collection)
 
 The collection is the collection/list to be iterated over, type element is the type of the iterator and element is the name of the iterator
 
-example: 
+Example: 
 ```
 for (int i : my_int_array) statement
 ```
@@ -42,5 +42,23 @@ public class Scopes {
 - int can convert into double without loss of information, but long cannot convert to int as long is more precise
     - Important to only convert from less precise to more precise
 
+- Manual casting follows c syntax
 
+```
+float x=5.5;
+int y= (int)x;
+\\ y=5
+```
 
+- Long (64 bits) will lose the top 32 bits and only keep the lower 32 bits.
+
+```
+10100010 00001000 10100011 11110010 -> 10100011 11110010
+```
+
+#### Type promotion
+
+- char, byte, short promoted to int
+- int promoted to long
+- any integer promoted to float
+- float to double
