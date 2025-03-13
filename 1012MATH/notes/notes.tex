@@ -487,35 +487,59 @@ A+O=O+A=A
 \end{matrix}
 \] The \textbf{row rank} is 2. The \textbf{column rank} is the whole of 2. THe row rank is always equal to the column rank. The \textbf{Nullity} is given by: \[
 \left[
-	\begin{array}{cccc|c}
+	\begin{matrix}{cccc|c}
 	1 & 2 & -1 & 3 & 0\\
 	1 & 0 & 3 & -1 & 0
-\end{array}
+\end{matrix}
 \right]
 \] \[
 \left[
-\begin{array}{cccc|c}
+\begin{matrix}{cccc|c}
 	1 & 2 & -1 & 3 & 0 \\
 	0 & -2 & 4 & -4 & 0
-\end{array}
+\end{matrix}
 \right]
 \] }
 \subsubsection{Example}
 \par{We have a $3\times4$ matrix: } 
-%\[
-%\left[
-%	\begin{array}
-%		1 & 0 & 1 & 1 \\
-%		1 & 1 & 3 & 2 \\
-%		2 & 1 & 4 & 3 
-%	\end{array}
-%\right]
-%\]
-The third row is dependent on the first 2, so everything built with the 3rd row can be replaced by a combination of 1 and 2. Therefore the basis is just the first and the 2nd row: \[
+\[
+\left[
+	\begin{matrix}
+		1 & 0 & 1 & 1 \\
+		1 & 1 & 3 & 2 \\
+		2 & 1 & 4 & 3 
+	\end{matrix}
+\right]
+\]
+\par{The third row is dependent on the first 2, so everything built with the 3rd row can be replaced by a combination of 1 and 2. Therefore the basis is just the first and the 2nd row: \[
 B=\lbrace\left(1,0,1,1\right),\left(1,1,3,2\right)\rbrace
-\] 
+\] it is important to know that the dimension is equal to the number of free variables (think about it, it is the dimension that can be made. ) }
+\subsubsection{conclusion}
+\par{The rank is the dimension of the row-space or column-space and the nullity is the dimension of the solution space. The dimension is the number of free variables in that subspace.}
+\subsubsection{Rank-Nullity THeorem}
+\par{if $A$ is  $m\times n$ then  \[
+\mathrm{rank}\left(A\right)+\mathrm{nullity}\left(A\right)=n
+\] }
+\subsubsection{Why?}
+\par{The reason is that each non-zero row gives us a leading entry, leading to the number of basic variables. Which is the rank. The Non-basic variables are the free variables, which give us the nullity. Each variable either contributes to the rank, or the nullity.}
+\subsubsection{Other properties of nullity and rank}
+TODO: do this later
 
-
+\subsection{Inverses}
+\par{If $A$ is an  $n\times n$ matrix and \[
+AB=I_{n}
+\] then \[
+BA=I_{n}
+\] and we call $B$ the inverse of  $A$ and that  $A$ is invertible. Note: $I_{n}$ is the identity matrix. An example: the zero-matrix is non-invertible as anything you multiply it by will never give the identity matrix.}
+\subsubsection{Finding the inverse}
+\par{To find the inverse of an $n\times n$ matrix of  $A$:
+\begin{enumerate}
+	\item{Form the super-augmented matrix}
+	\item{Performe Gauss-Jordan elimination to try and reach reduced row echelon form \[
+			\left[I_{n}|X\right]
+	\] }
+	\item{If successful, then $X=A^{-1}$ and if not successful, $A$ is not invertible.}
+\end{enumerate}
+An $n\times n$ is invertible  \textbf{if and only if} its reduced row echelon form is $I_{n}$ THis occurs if and only if the rank is equal to $n$. A can only be invertible if the columns and rows are both linearly independent.}
 
 \end{document}
-
