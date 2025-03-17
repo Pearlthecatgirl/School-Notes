@@ -563,6 +563,43 @@ When We consider the current in this complex domain, it is earlier defined as $i
 \] and \[
 \frac{1}{\hat{Z}_{total_{Parallel}}}=\frac{1}{\hat{Z_{1}}}+\frac{1}{\hat{Z_{2}}}+\frac{1}{\hat{Z_{3}}}+...
 \]  
+\section{Phase Shift and Phasors of Resonance}
+\par{Imagine an AC circuit hooked up to a resistor, with voltage $V_{p}\cos\left(\omega t\right)$ and resistance $R$, then current is simply:  \[
+I=\frac{V_{p}}{R}\cos\left(\omega t\right)
+\] as per Ohm's Law (Impedence for resistors only). Both sinusoidal have the same phase. There is no phase shift between. Neither are leading nor lagging behind the other. 
+
+Now Imagine an AC circuit hooked up to an inductor, with the same input Voltage, and with inductance L. We can then obtain the current (the complex current) with the impedance. Doing so, we get: \[
+	\hat{I}=\frac{\hat{V}}{i\omega L}
+\] and in polar form: \[
+	\hat{I}=-i\frac{V_{p}}{\omega L}e^{i\omega t}
+\] When considering the -i, we realised that \[
+-i=e^{-i\frac{\pi}{2}}
+\] and plugging this in, we get: \[
+\hat{I}=e^{-i\frac{\pi}{2}}\frac{V_{p}}{\omega L}e^{i\omega t}
+\] as this is an exponential, we can combine the phase angles to give: \[
+\theta=\omega t-\frac{\pi}{2}
+\] if we then consider the real component of current, we get: \[
+I=\frac{V_{p}}{\omega L}\cos\left(\omega t-\frac{\pi}{2}\right)
+\] This time, we can see that the current has a phase shift of $\frac{-\pi}{2}$, meaning that it is translated horizontally in the positive x direction (as indicated by the negative). This means that the current runs ahead of the voltage, and is known as \textbf{Voltage leads current by $\frac{\pi}{2}$}.
+
+Finally, if we consider the capacitor, our impedance would be $Z_{C}=-iX_{C}$ and when we find the complex current we get: \[
+	\hat{I}=i\omega CV_{p}e^{i\omega t}
+\]  and in polar form: \[
+	\hat{I}=e^{i\frac{\pi}{2}}\omega CV_{p}e^{i\omega t}
+\] So when we consider the real component, the phase shift becomes: \[
+\theta=\omega t+\frac{\pi}{2}
+\]  here, current is translated horizontally in the negative horizontal direction as indicated by the positive. This is known as \textbf{Voltage lags current by $\frac{\pi}{2}$}.
+}
+\subsection{Phasors}
+\par{Given 2 complex numbers on the Argand diagram: $r_{1}e^{i\theta_{1}}$ and $r_{2}e^{i\theta_{2}}$. If we multiply them together, we get:}
+\begin{align*}
+r_{1}e^{i\theta_{1}}\times r_{2}e^{i\theta_{2}} \\
+=r_{1}r_{2}e^{i\left(\theta_{1}+\theta_{2}\right)}
+\end{align*}
+\par{This means that we can represent that operation as the phasor where the phase angle is just the sum of the 2 initial phase angles. This then implies that multiplying a complex number has the geometric meaning of rotating the phasor by the phase angle (after scaling the modulus).
+
+Now consider the impedance of a resistor
+}
 
 
 
