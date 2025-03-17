@@ -459,7 +459,7 @@ V=L\frac{d^{2}q}{dt^{2}}
 \] This can be written as: \[
 V_{total}-V_{1}-V_{2}-V_{3}...-V_{n}=0
 \] This is essentially conservation of energy.}
-\subsection{LC Circuit}
+\section{LC Circuit}
 \par{Consists of a capacitor and a inductor, and initially, the capacitor is charged. We consider no loss in the circuit (ideal). The LC circuit produces an oscillation of charge, bouncing energy being stored in as potential difference (electrical energy) in the capacitor vs as magnetic field (magnetic energy) in the inductor. This is similar to how in the spring, the energy is being bounced between springs' potential energy and the mass' kinetic energy. 
 \begin{itemize}
 	\item{Initially, There is a build up of charge on one of the plates.}
@@ -487,7 +487,7 @@ V\left(t\right)=\frac{A}{C}\cos\left(\omega_{0}t+\Delta\right)
 \] As current is the first derivative, the formula is: \[
 I\left(t\right)=-\omega_{0}A\sin\left(\omega_{0}t+\Delta\right)
 \] }
-\subsubsection{Energy of an LC Circuit}
+\subsection{Energy of an LC Circuit}
 \par{The energy of an LC circuit should stay constant. Remember that energy stored in a capacitor is given: \[
 U=\frac{1}{2}CV^{2}
 \] $U$ is the energy, $C$ is capacitance and $V$ is voltage. To get the energy stored in an inductor, we first start with the power: \[
@@ -503,6 +503,67 @@ U=L\int_{}^{}{I}\mathrm{dI}
 \] \[
 U=L\frac{1}{2}I^{2}
 \] This is analogous to the kinetic energy of the mass. }
+\subsection{LCR Circuit}
+\par{The standard LC circuit (lacks a motor) follows simple harmonic motion. When we hook it up to an AC voltage source (DC cannot work as there won't be an oscillating 'driving force'), then resonance can occur. In any real world circuit, there will be an internal resistance (Hence the LCR) which dissipates and prevents the amplitude from going to infinity. Given Kirchoff's Loop Law, We know that the Total Voltage should give 0. That means: \[
+V\left(t\right)-IR-L\frac{dI}{dt}-\frac{q}{C}=0
+\] We represent current as the rate of change of charge: \[
+L\frac{d}{dt}\left(\frac{dq}{dt}\right)+R\frac{dq}{dt}+\frac{q}{C}=V\left(t\right)
+\] \[
+L\frac{d^{2}q}{dt^{2}}+R\frac{dq}{dt}+\frac{q}{C}=V\left(t\right)
+\] Remember that the 2nd derivative should not have a coefficient: \[
+\frac{d^{2}q}{dt^{2}}+\frac{R}{L}\frac{dq}{dt}+\frac{q}{LC}=\frac{V\left(t\right)}{L}
+\] This means that the natural angular frequency is: \[
+\omega_{0}=\frac{1}{\sqrt{LC}}
+\] When the Voltage function is given (as a sinusoidal function): \[
+V\left(t\right)=V_{p}\cos\left(\omega t\right)
+\] This is the real component of the complex number \[
+V_{p}e^{i\omega t}
+\] When we rewrite the equation, we take q as complex as well: \[
+\frac{d^{2}\hat{q}}{dt^{2}}+\frac{R}{L}\frac{d\hat{q}}{dt}+\omega_{0}^{2}\hat{q}=\frac{\hat{V}}{L}
+\] Due to $\hat{q}=q_{p}e^{i\omega t}$, its derivative is simply: \[
+\frac{d\hat{q}}{dt}=q_{p}e^{i\omega t}\times\frac{d}{dt}\left(i\omega t\right)
+\] Which simplifies into: \[
+\frac{d\hat{q}}{dt}=i\omega q_{p}e^{i\omega t}=i\omega\hat{q}
+\] Plugging this into our DE, we get: \[
+\left(i\omega \right)^{2}\hat{q}+\frac{R}{L}i\omega\hat{q}+\omega_{0}^{2}\hat{q}=\frac{\hat{V}}{L}
+\] Which can be simplified into:} 
+\begin{align*}
+-\omega^{2}\hat{q}+\frac{R}{L}i\omega\hat{q}+\omega_{0}^{2}\hat{q}=\frac{\hat{V}}{L} \\
+\frac{R}{L}i\omega\hat{q}+\omega_{0}^{2}\hat{q}-\omega^{2}\hat{q}=\frac{\hat{V}}{L} \\
+\hat{q}\left(\frac{R}{L}i\omega+\omega_{0}^{2}-\omega^{2}\right)=\frac{\hat{V}}{L} \\
+\implies\hat{q}=\frac{\hat{V}}{L\left(\omega_{0}^{2}-\omega^{2}+i\frac{R}{L}\omega\right)}
+\end{align*}
+\par{This is practically the same as the equation obtained from the mechanical model, just with all the electronic analogues. If we re-plug in the definition of the natural frequency:}
+\begin{align*}
+& \hat{q}=\frac{\hat{V}}{L\left(\omega_{0}^{2}-\omega^{2}+i\frac{R}{L}\omega\right)} \\
+& \hat{q}=\frac{\hat{V}}{L\left(\frac{1}{LC}-\omega^{2}+i\frac{R}{L}\omega\right)} \\
+& \hat{q}=\frac{\hat{V}}{\frac{L}{LC}-L\omega^{2}+i\frac{LR}{L}\omega} \\
+& \hat{q}=\frac{\hat{V}}{\frac{1}{C}-L\omega^{2}+i R\omega} \\
+\end{align*}
+When We consider the current in this complex domain, it is earlier defined as $i\omega$, hence:
+\begin{align*}
+& \hat{I}=\frac{i\omega\hat{V}}{\frac{1}{C}-L\omega^{2}+i R\omega} \\
+& i\omega\hat{V}=\hat{I}\left(\frac{1}{C}-L\omega^{2}+i R\omega\right) \\
+& \hat{V}=\hat{I}\left(\frac{1}{i\omega C}-\frac{L\omega^{2}}{i\omega}+R\right) \\
+& \hat{V}=\hat{I}\left(R+i\left(\omega L-\frac{1}{\omega C}\right)\right) \\
+& \text{Let }\hat{Z}=\left(R+i\left(\omega L-\frac{1}{\omega C}\right)\right)
+\end{align*}
+\subsubsection{Complex Impedence}
+\par{From the above equation, we can simplify further, down into: \[
+		\hat{Z}=R+i\left(\omega L-\frac{1}{\omega C}\right)
+\] This is known as complex Impedence and is often used because \[
+\hat{V}=\hat{I}\hat{Z}
+\] Is very close to $V=IR$, Ohm's law, as well as linking together the capacitance and inductance.}
+\subsubsection{Complex Reactance $\left(X\right)$}
+\par{Complex impedance has 2 parts, the real part is the resistance, but the complex part is what is known as \textbf{Reactance}. Reactance itself is given by the reactance of the inductor and the reactance of the capacitor. $\omega L$ is the reactance of the inductor, denoted $X_{L}$and $\frac{1}{\omega C}$ is the reactance of the capacitor, denoted $X_{C}$. Therefore impedance gives the generalisation of resistance for capacitors and inductors.\[
+		\hat{Z}=R+i\left(X_{L}-X_{C}\right)
+\] }
+\par{Complex impedance is treated as if it were resistance, but now it applies to inductors and capacitors. We can find the total impedance in both series and parallel circuits, as if they were resistance: i.e: \[
+		\hat{Z}_{total_{Series}}=\hat{Z_{1}}+\hat{Z_{2}}+\hat{Z_{3}}+...
+\] and \[
+\frac{1}{\hat{Z}_{total_{Parallel}}}=\frac{1}{\hat{Z_{1}}}+\frac{1}{\hat{Z_{2}}}+\frac{1}{\hat{Z_{3}}}+...
+\]  
+
 
 
 
