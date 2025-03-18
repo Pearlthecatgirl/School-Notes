@@ -598,10 +598,167 @@ r_{1}e^{i\theta_{1}}\times r_{2}e^{i\theta_{2}} \\
 \end{align*}
 \par{This means that we can represent that operation as the phasor where the phase angle is just the sum of the 2 initial phase angles. This then implies that multiplying a complex number has the geometric meaning of rotating the phasor by the phase angle (after scaling the modulus).
 
-Now consider the impedance of a resistor
+Now consider the impedance of a resistor. It is simply the resistance as there is no complex component: \[
+Z_{R}=R
+\] \[
+V_{R}=I_{R}Z_{R}=I_{R}R
+\] As there never is any complex component, the arrows end up pointing in the same direction. Now consider the impedance of the inductor. \[
+Z_{L}=iX_{L}
+\] This means that the arrow $X_{L}$ points directly up (purely imaginary with no real component). When we multiply, we get an entirely complex voltage, also in the positive rotation. This shows geometrically that voltage actually is 'ahead' by '90 degrees'.
+
+Finally, consider the impedance of the capacitor with its current. \[
+Z_{C}=-iX_{C}
+\] And as you guessed, when we multiply with the current (completely real, no imaginary component), our final voltage becomes completely complex, pointing to the negative complex direction. This shows geometrically the meaning of voltage lagging behind by '90 degrees'. It also implies that multiplying complex numbers mean that after scaling their modulus-es, the product of the complex part can be interpreted as a rotation of the 2 that multiply.
 }
+\section{Energy of an Oscillator}
+\par{We know kinetic energy is proportional to the square of the velocity that is: \[
+K=\frac{1}{2}mv^{2}
+\] Our issue, however, is that velocity is not linearly proportional to K. 
 
+Consider some arbitrary value A, and some value $\hat{A}=\hat{A_{0}}e^{i\omega t}$ and that $A=\mathrm{Re}\left[\hat{A}\right]$. If for some reason, we wanted the value $A^{2}$ (like velocity to kinetic energy) The Cartesian form of $\hat{A}$ would be  $\hat{A}=x+iy$ and squaring it, we get: }
+\begin{align*}
+	\hat{A^{2}}&=\left(x+iy\right)^{2} \\
+			   &=x^{2}+2ixy+\left(iy\right)^{2} \\
+			   &=x^{2}+2ixy-y^{2} \\
+			   &=x^{2}-y^{2}+2ixy
+\end{align*}
+\par{The issue with this, however, is that 'y' originated from the complex component of $\hat{A}$, meaning it has no physical value. As a result, we conclude that the complex number 'trick' only works with linear DEs.
 
+	Lets instead consider the complex number $\hat{A}$ in polar form: \[
+		\hat{A}=A_{0}e^{i\left(\omega t+\Delta\right)}
+	\] with the real $A$ being this cosine function:  \[
+	A=A_{0}\cos\left(\omega t+\Delta\right)
+	\] and when we square it we get: \[
+	A^{2}=A_{0}^{2}\cos^{2}\left(\omega t+\Delta\right)
+	\] When we graph this function, we see a completely positive cosine function. And from this, we can get the 'average' over a large period of time. Which gives: \[
+	\frac{1}{2}A_{0}^{2}
+	\] and we conclude that the \textbf{Mean over a long period of time is given by}: \[
+	\langle A^{2}\rangle=\frac{1}{2}A_{0}^{2} =\frac{1}{2}\|\hat{A}\|^{2}
+	\] 
+Considering frictional forces, how much work is done by the outside external force? \[
+m\frac{d^{2}x}{dt^{2}}+b\frac{dx}{dt}+kx=F\left(t\right)
+\] We know that work is given by the formula: \[
+W=Fs=Fdx
+\] so we can consider power as work over time: \[
+P=F\frac{dx}{dt}
+\] With that, we can replace all the forces with this equation: } 
+\begin{align*}
+	P&=\frac{dx}{dt}\left(m\frac{d^{2}x}{dt^{2}}+b\frac{dx}{dt}+kx\right) \\
+	 &=m\frac{d^{x}}{dt^{2}}\frac{dx}{dt} +b\frac{dx}{dt}\frac{dx}{dt}+kx\frac{dx}{dt} \\
+	 &=m\frac{dx}{dt}\frac{d^{2}x}{d^{2}t}+kx\frac{dx}{dt}+b\left(\frac{dx}{dt}\right)^{2}
+\end{align*}
+\par{The first 2 terms here are actually a time derivative of the \textbf{stored energy}: \[
+P=\frac{d}{dt}\left(\frac{1}{2}m\left(\frac{dx}{dt}\right)^{2}+\frac{1}{2}kx^{2}\right)+b\left(\frac{dx}{dt}\right)^{2}
+\] \[
+\text{stored energy given by:} \left(\frac{1}{2}m\left(\frac{dx}{dt}\right)^{2}+\frac{1}{2}kx^{2}\right)
+\] 
 
+The stored energy is made up of:
+\begin{itemize}
+	\item{The kinetic energy of the mass}
+	\item{The elastic potential energy of the spring}
+\end{itemize}
+In the long run, the derivative of this stored energy term does not change: this means if we avergae the power after a long time, all the energy ends up in the resistive term of 'p': \[
+\langle P\rangle=\langle b\left(\frac{dx}{dt}\right)^{2}\rangle
+\] Where the angular brackets denote 'average over a long period of time. We can now use the trick from earlier: $\langle A^{2}\rangle=\frac{1}{2}\|\hat{A}\|^{2}$ \[
+\langle P\rangle=\langle b\left(\frac{dx}{dt}\right)^{2}\rangle
+\] our definition of $\hat{x}$ was this: 
+\[
+\hat{x}=x_{0}e^{i\left(\omega t+\Delta\right)} 
+\] which gives derivative: 
+\[
+\frac{d\hat{x}}{dt}=i\omega x_{0}e^{i\left(\omega t+\Delta\right)}
+\] realise that the i can be moved into the argument, leaving us with the modulus to be: \[
+\rho=\omega x_{0}
+\] taking the modulus squared and plugging that into our equation we get: }
+\begin{align*}
+\langle P\rangle=\langle b\left(\frac{dx}{dt}\right)^{2}\rangle \\
+\langle P\rangle=\frac{1}{2}b\|\frac{d\hat{x}}{dt}\|^{2} \\
+\langle P\rangle=\frac{1}{2}b\omega^{2}x_{0}^{2} \\
+\end{align*}
+\par{And that gives us the mean power of the spring. In the case of the LCR circuit, we replace the damping constant with resistance and the displacement with charge: \[
+\langle P\rangle=R\langle I^{2}\rangle
+\] which is very similar to that of power in a DC circuit: $P=VI=I\times IR=I^{2}R$ only here, we are talking about the mean power and the mean current squared. Using our tricks again, we get: }
+\begin{align*}
+\langle P\rangle=R\langle I^{2}\rangle \\
+\langle P\rangle=R\frac{1}{2}\|\hat{I}\|^{2} \\
+\langle P\rangle=\frac{1}{2}RI_{0}^{2} \\
+\end{align*}
+In the case of the LCR AC circuit, this power is going towards waste heat in the resistor.
+
+\par{Starting from stored energy this time: \[
+E=\frac{1}{2}m\left(\frac{dx}{dt}\right)^{2}+\frac{1}{2}kx^{2}
+\] We work out the average using the above trick: \[
+\langle E\rangle=\frac{1}{2}m\langle\left(\frac{dx}{dt}\right)^{2}\rangle+\frac{1}{2}k\langle x^{2}\rangle
+\] \[
+\langle E\rangle=\frac{1}{2}m\frac{1}{2}\omega^{2}x_{0}^{2}+\frac{1}{2}k\frac{1}{2}x_{0}^{2}
+\] which simplifies down into: \[
+\langle E\rangle=\frac{1}{4}mx_{0}^{2}\left(\omega^{2}+\frac{k}{m}\right)
+\] We all know $\frac{k}{m}$ is the natural frequency squared: \[
+\langle E\rangle=\frac{1}{4}mx_{0}^{2}\left(\omega^{2}+\omega_{0}^{2}\right)
+\] When an oscillator is very officiant, and when the angular frequency is very close to the resonant frequency, $x_{0}$ (the modulus of the distance travels) becomes very large (Resonant frequency being close to angular frequency means that you are pushing in the direction of the swing, hence swinging further. More efficient means the swing is lighter so it is easier to swing to that position), then the stored energy is very high (Think the high kinetic energy from moving, and as the mass at the end of the swing is now high, gravitational potential energy is also high.) This means we can store a relatively large amount of energy from a small force. The oscillator can have a great deal of energy when the friction is low, even though there are a lot of oscillations, not much energy is being lost (Think of the action of a swing.) This efficiency can be measured by comparing how much energy is stored, vs how much work the force does per oscillation: how the stored energy compares to the amount of work done per cycle is known as the $Q$ of the system. Given by:  \[
+Q=\omega\frac{\langle E\rangle}{\langle P\rangle}
+\] This is sometimes also known as the Q factor, or the quality factor. It is dimensionless. We can plug in the equations for energy and power from earlier, to give: \[
+Q=\omega\frac{\frac{1}{4}mx_{0}^{2}\left(\omega^{2}-\omega_{0}^{2}\right)}{\frac{1}{2}b\omega^{2}x_{0}^{2}}
+\] which simplifies into \[
+Q=\frac{m\left(\omega^{2}+\omega_{0}^{2}\right)}{2b\omega}
+\] when Q is very large, it gives a measure of how good the oscillator is. For a great oscillator where $\omega=\omega_{0}$, it cancels down into: \[
+Q=\frac{m\left(\omega_{0}^{2}+\omega_{0^{2}}\right)}{2b\omega_{0}}
+\] \[
+Q=\frac{m\omega_{0}}{b}
+\] We defined $\gamma$ to be the ratio $\frac{m}{b}$ : \[
+Q=\frac{\omega_{0}}{\gamma}
+\] }
+\subsection{Transients in damped oscillations}
+\par{Transients refer to the solutions of the differential equations provided when the external force is removed. Imagine pushing someone on a spring and you suddenly stop pushing them. Transiets refer to what happens next after you stop providing that external force. In this case we must think about the DE with friction/damping forces in mind, otherwise we simply revert to simple harmonic motion. Consider a system where \[
+\frac{Q}{2\pi}=1000
+\] Recall that Q is: \[
+Q=\omega\frac{\langle E\rangle}{\langle P\rangle}
+\] \[
+\frac{\omega}{2\pi}\frac{\langle E\rangle}{\langle P\rangle}=1000
+\] Remember that $\frac{\omega}{2\pi}=\frac{1}{T}=f$ \[
+\frac{1}{T}\langle E\rangle=1000\langle P\rangle
+\] \[
+\frac{1}{1000}\langle E\rangle=\langle P\rangle T
+\] The right hand side shows the work done in a cycle (power times period). In this system, it is equal to 1 thousandths of the stored energy. Meaning that every cycle, 1 thousandths of the current energy will be lost. }
+
+\par{Starting from our complex x differential equation, we have: \[
+		\hat{x}=x_{0}e^{i\alpha t}
+\] Note that since we are unsure of the phase differences and angular frequency, we use $\alpha$ as a substitute for now. \[
+m\frac{d^{2}\hat{x}}{dt^{2}}+b\frac{d\hat{x}}{dt}+k\hat{x}=0
+\] Remember using complex numbers turns the differential equation to algebraic equation similar to Fourier transform \[
+m\left(i\alpha\right)^{2}\hat{x}+b\left(i\alpha\right)\hat{x}+k\hat{x}=0
+\] after simplifying, we get: \[
+\left( -m\alpha^{2}+ib\alpha+k\right)\hat{x}=0
+\] \[
+\left( -m\alpha^{2}+ib\alpha+k\right)x_{0}e^{i\alpha t}=0
+\] We realise that the exponential term can never be 0, so we divide it out: \[
+\left( -m\alpha^{2}+ib\alpha+k\right)x_{0}=0
+\] While $X_{0}$ can be 0, it being 0 implies that there is no movement at all, and therefore the answer would automatically be 0, so instead, we put an assumption that $x_{0}\ne0$ and divide it out also. \[
+-m\alpha^{2}+ib\alpha+k=0
+\] We are now left with a quadratic to solve for, which we can divide through by mass: \[
+-\alpha^{2}+i\frac{b}{m}\alpha+\frac{k}{m}=0
+\] We can now write $\frac{b}{m}$ as $\gamma$ and $\frac{k}{m}$ as $\omega_{0}^{2}$ \[
+-\alpha^{2}+i\gamma\alpha+\omega_{0}^{2}=0
+\] And this can be solved simply through the quadratic formula, giving us 2 solutions: \[
+\alpha=\frac{i\gamma}{2}\pm\sqrt{\omega_{0}^{2}-\frac{\gamma^{2}}{4}}
+\] after plugging that into our exponential \[
+\hat{x}=x_{0}e^{i\left(\frac{i\gamma}{2}\pm\sqrt{\omega_{0}^{2}-\frac{\gamma^{2}}{4}}
+\right) t}
+\] we can rearrange and pull the $\frac{i\gamma}{2}$ out, collecting the i in the exponential and realising that it is now part of the amplitude: \[
+\hat{x}=x_{0}e^{-\frac{\gamma}{2}t}e^{\pm i\sqrt{\omega_{0}^{2}-\frac{\gamma^{2}}{4}t}}
+\] This makes sense as the negative shows that the amplitude gradually decreases. Taking the real part of the positive solution, we get: \[
+x=x_{0}e^{-\frac{\gamma}{2}t}\cos\left(\sqrt{\omega_{0}^{2}-\frac{\gamma^{2}}{4}t}\right)
+\]}
+\par{Transient in LCR circuit is similar to the mechanical version, as they are analogous
+
+	When the term inside of the square root in the cosine: \[
+	\omega_{0}^{2}-\frac{\gamma^{2}}{4}t>0
+	\] then the damping is small enough that you can still see the oscillations, but with the damping, the oscillations gradually grow weaker and smaller until they die out. This situation is called: UNDERDAMPED \[
+	\omega_{0}^{2}>\frac{\gamma^{2}}{4}t
+	\] if instead it were equal then the square root within the cosine goes to 0, and cosine goes to 1. This shows that there are no more oscillations and the motion is a smooth decrement to 0. \[
+	\omega_{0}^{2}=\frac{\gamma^{2}}{4}t
+	\] This situation is referred to as critically damped. If we increase the damping further, and now greater than the resonant frequency, with a longer die off (as in the motion takes longer than if it were only critically damped). This situation is known as over damped.
+}
 
 \end{document}
