@@ -663,6 +663,67 @@ The determinant is also multiplicative, meaning that: \[
 \mathrm{det}\left(A^{-1}\right)=\frac{1}{\left(\mathrm{det}\left(A\right)\right)}
 \] 
 }
+\section{Function Terminology}
+\par{A function has a \textbf{domain} $A$ and a \textbf{co-domain} $B$, and maps each $a\in A$ to  \textbf{exactly one} element in $B$. Unique input to unique output, or... Different inputs may have the same output, but 1 input cannot be mapped to 2 different outputs. The notation is: \[
+f\left(\left(x,y\right)\right)=\left(expr1, expr2\right)
+\] A linear transformation is a function $f:\mathbb{R^{n}}to\mathbb{R^{m}}$ such that: \[
+f\left(u+v\right)=f\left(u\right)=f\left(v\right)
+\] For all vectors $u,v\int\mathbb{R^{n}}$ 
+and:
+\[
+f\left(\alpha u\right)=\alpha f\left(u\right)
+\] for all vectors $u\int\mathbb{R^{2}}$ and scalar $\alpha\in\mathbb{R}$
+
+Given a function $f$, decide whether or not it is a linear transformation. If it is, there has to be a symbolic proof, but if it isn't, 1 counterexample is enough.
+Example of not a linear transformation: \[
+g:\mathbb{R^{2}}\to\mathbb{R^{2}}:\left(x,y\right)\to\left(x^{2},y^{2}\right)
+\] scaling it fails immediately: \[
+g\left(2\left(1,1\right)\right)\ne2g\left(\left(1,1\right)\right)
+\] This is a similar proof to subspaces. 
+As a result of the above, there exists this property that if $f:\mathbb{R^{n}}\to\mathbb{R^{m}}$ is a linear transformation then \[
+f\left(0\right)=0
+\] If the formulas has any constants, it immediately is obvious that it is non-linear as it violates the above (will not get 0 if we put in 0).
+}
+\subsection{Kernel}
+\par{If $f:\mathbb{R^{n}}\to\mathbb{R}^{m}$, then the \textbf{kernel} of $f$ is the vectors in the  \textbf{domain} $\mathbb{R^{n}}$ that are mapped to 0. It is sometimes know just as $K$. The kernel cannot be empty, containing at least the $\vec{0}$ (zero vector) but can contain more. The kernel itself is also \textbf{always} a subspace. An example: \[
+f\left(x,y\right)=\left(2x-y,2y-4x\right)
+\] Find the kernel of the above:
+\begin{itemize}
+	\item{The 0 vector is always in the kernel, and as there are no constants, it is confirmed in the kernel} \\
+	\item{$\left(1,2\right)$ via substitution}
+	\item{drawing a line from the 2 above points shows that every point on that line is mapped to 0, and everything not on that line does not map to 0. As a result the kernel of $f$ is a subspace, is a line.}
+\end{itemize}
+
+Proving that the kernel is a subspace:
+\begin{enumerate}
+	\item{Is $0\in \mathrm{kernal}\left(f\right)$, yes, because  $f\left(0\right)=0$}
+	\item{Is it closed under addition?
+		\begin{enumerate}
+			\item{Let $\vec{u},\vec{v}\in \mathrm{kernal}\left(f\right)$}
+			\item{is $\vec{u}+\vec{v}\in \mathrm{kernal}f$?\[
+			f\left(\vec{u}+\vec{v}\right)=f\left(\vec{u}\right)+f\left(\vec{v}\right)=0+0=0
+			\] }
+		\end{enumerate}}
+	\item{Is it closed under multiplication? Yes because anything times 0 is 0.}
+\end{enumerate}}
+\subsection{Range}
+\par{If $f:\mathrm{R^{n}}\to\mathrm{R^{m}}$, then the \textbf{range} of $f$ is the set of vectors:  \[
+\lbrace f\left(u\right):u\in\mathrm{R^{n}}\rbrace
+\] This is a set of vectors in the \textbf{co-domain} of $f$, namely $\mathbb{R}^{m}$.
+
+As 0 (domain) is always mapped to 0 (range), we know 0 will always be in the range.
+}
+\subsection{Determining linear transformations}
+\par{A linear transformation is \textbf{determined} by its action on a \textbf{basis} of the domain. SUppose that $f:\mathbb{R}^{2}\to \mathbb{R}^{3}$ is a linear transfomration such that: \[
+		f\left(1,0\right)=\left(1,1,1\right) \text{ and } f\left(0,1\right)=\left(0,0,1\right)
+\] then we caon obtain: \[
+f\left(1,1\right)
+\] through: \[
+f\left(\left(1,0\right)+\left(0,1\right)\right)
+\] Think of it as a linear combination, where the scalars are given in the $\mathbb{R}^{2}$ and the vectors are $\mathbb{R}^{3}$ 
+
+As a result, the range of a linera transformation $f:\mathbb{R}^{n}\to\mathbb{R}^{m}$ is the span of the images of any basis of $\mathbb{R}^{n}$
+}
 
 
 \end{document}
