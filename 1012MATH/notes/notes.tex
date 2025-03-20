@@ -723,11 +723,62 @@ f\left(\left(1,0\right)+\left(0,1\right)\right)
 \] Think of it as a linear combination, where the scalars are given in the $\mathbb{R}^{2}$ and the vectors are $\mathbb{R}^{3}$ 
 
 As a result, the range of a linear transformation $f:\mathbb{R}^{n}\to\mathbb{R}^{m}$ is the span of the images of any basis of $\mathbb{R}^{n}$
-
 The range and kernel of a linear transformations are subspaces.
-
 To find the basis for a kernel, we must solve $f\left(v\right)=0$
+
+Example: Let $f: \mathbb{R}^{3}\to \mathbb{R}^{2}$ be given by  $f\left(x,y,z\right)=\left(x+y,y+z\right)$ Find a basis for the kernel and the range of $f$
+
+Kernel:
 }
+\begin{align*}
+	x+y=0 \\
+	y+z=0 
+\end{align*}
+\[\left[
+	\begin{matrix}
+	1 & 1 & 0 & 0 \\
+	0 & 1 & 1 & 0
+\end{matrix}\right]
+\]
+z is a free variable, $y=-z, x=z$
+$S=\lbrace\left(z,-z,z:z\right)\in\mathbb{R}\rbrace$
+The basis for the kernel is the same as the one for the null-space.
 
+Range: 
+\begin{align*}
+	&f\left(1,0,0\right)=\left(1,0\right) \\
+	&f\left(0,1,0\right)=\left(1,1\right) \\
+	&f\left(0,0,1\right)=\left(0,1\right) \\
+	&B=\lbrace\left(1,0\right),\left(1,1\right), \rbrace
+\end{align*}
+\subsubsection{Matrix multiplication}
+\par{Let $A$ be an arbitrary  $m\times n$ matrix and define $f:\mathbb{R}^{n}\to\mathbb{R}^{m}$ by \[
+f\left(v\right)=Av
+\] where v is an $n\times 1$ column vector. Then $f$ is a linear transformation. To represent a linear transformation as a matrix, need to specify a  \textbf{basis} for the domain and co-domain
+\begin{itemize}
+	\item{Linear transformation $f: \mathbb{R}^{n}\to\mathbb{R}^{m}$}
+	\item{$B=\lbrace v_{1},v_{2}...v_{n}\rbrace$ basis for $\mathbb{R}^{n}$}
+	\item{$C=\lbrace w_{1},w_{2}...w_{n}\rbrace$ basis for $\mathbb{R}^{m}$}
+\end{itemize}
+The matrix $\left[f\right]_{CB}$ is an $m\times n$ whose i'th column is the C-coordinate vector of $f\left(v_{i}\right)$
+ 
+Example: 
+Let $f:\mathbb{R}^{2}\to\mathbb{R}^{2}$ be given by: \[
+f\left(x,y\right)=\left(x+y,x-y\right)
+\] and let $B=\lbrace\left(1,1\right),\left(2,1\right)\rbrace$ and $C\lbrace\left(1,1\right)\left(1,0\right)\rbrace$
+}
+\begin{align*}
+	f\left(1,1\right)= \left(2,0\right)=0*\left(1,1\right)+2*\left(1,0\right) \\
+	f\left(2,1\right)=\left(3,1\right)=1\left(1,1\right)+2\left(1,0\right)
+\end{align*}
+\[
+\left[f\right]_{CB}=\left[
+\begin{matrix}
+	0 & 1 \\ 2 & 2
+\end{matrix}\right]
+\].
 
+If $\left[f\right]_{CB}$ is the matrix of linear transformation $f$, then \[
+\left[f\right]_{CB}\left(v\right)_{B}=\left(f\left(v\right)\right)_{C}
+\] . In other words, multiplying by $f_{CB}$ takes a $B$-coordinate vector, applies the linear transformation  $f$ and expresses the result in  $C$-coordinates.
 \end{document}
