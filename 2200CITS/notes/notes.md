@@ -1,7 +1,8 @@
-
 ## Week 2 (Lecture 1)
 
 ### Searching
+
+## Week 2 (Lecture 2)
 
 #### Binary search
 
@@ -71,8 +72,117 @@ $n^{2}$
 
 $O\left(n^{2}\right)$
 
+#### Merge Sort
+
+- A worst case complexity of $O\left(n\times log\left(n\right)\right)$
+- Based on divide and conquer of array.
+
+#### Complexity of Merge Sort
+
+### Static Determination vs runtime Determination
+
+- The memory requirement of a *recursive* function/method is unknown at compile time.
+    - Therefore, memory for each function call is dynamically allocated
+    - At each call, more memory is allocated on the stack for that call.
+        - If there is a large amount of recursive calls, there will be a lot of memory required just to handle the function calls.
+
+#### Complexity Analysis
+
+- Running time grows with input size
+    - Average case is too difficult to determine
+    - Consider the worst case scenario
+    - log is usually base-2
+    - complexity cannot be lower than 10
+
+##### Big O notation
+
+- Given functions $f\left(n\right)$ and $g\left(n\right)$, we say that 
+
+$$
+f\left(n\right)=O\left(g\left(n\right)\right)
+$$
+
+If there are positive constants $c$ and $n_{0}$ such that:
+$$
+f\left(n\right)\le cg\left(n\right) \text{for } n\ge n_{0}
+$$
+
+If $f\left(n\right)$ is monotone (strictly increasing), at some point $n_{0}$, $G\left(n\right)$ will be always greater than $f\left(n\right)$. The constant must also never be greater than $n_{0}$
+
+###### Example: 
+
+$$
+n=O\left(n^{2}\right)
+$$
+
+## Data structures
+
+### Stacks
+
+- A statck is just some objects on top of some other objects
+- Example of the runtime stack
+
+- The stack arbitrary ADT (abstract data type) stores arbitrary objects.
+    - Insertions and deletions follow the **last-in first-out** scheme
+        - The last object put on the stack will be the first to be taken out
+    - Main stack operations:
+        ```
+            void push(object); // inserts an element
+            object pop(void); // removes and returns the last inserted element
+        ```
+    - Auxiliary stack operations:
+        ```
+            object top(void); // returns the top element without removal
+            int len(void); // returns the length of the stack; number of objects in the stack
+            bool is_empty(); // returns whether the stack itself is empty
+        ```
+    - Example Application of stacks
+        - Page-visited history in web browser
+        - undo sequence in text editor
+        - chain of method calls in code recursion
+
+#### Array based stack implementation
+
+We add elements from the left to right
+- example:
+```
+    typedef struct {
+        void *stack_items;
+        int stack_pointer; // Stores the current where the top element is for push/pop operations
+    } stack;
+```
+- return -1 for if empty. As the stack cursor can never reach -1 index, we know this handles our error.
+
+#### Performance limitations
+
+- Let $n$ be the number of elements in the stack
+    - The space used is given by: $O\left(n\right)$
+    - Each operation runs in time $O\left(1\right)$
 
 
+#### Parentheses Matching
+- Each open bracket type, ```('(', '{', '[', '|')``` There must be a closed bracket
+- This problem can be solved by implementing a stack to keep track of the current open scope
 
-
+Example with html:
+```
+def is_matched_html(raw):
+    # Return true if all HTML tags are properly matched, or return false
+    S=ArrayStack()
+    j=raw.find('<')
+    while j!=-1:
+        k=raw.find('>',j+1)
+        if k==-1:
+            return False
+        tag=raw[j+1:k]
+        if not tag.startswitch('/'):
+            S.push(tag)
+        else:
+        if S.is_empty():
+            return False
+        if tag[1:]!=S.pop()
+            return False
+        j=raw.find('<',k+1)
+    return S.is_empty()
+```
 
