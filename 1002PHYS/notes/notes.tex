@@ -760,5 +760,43 @@ x=x_{0}e^{-\frac{\gamma}{2}t}\cos\left(\sqrt{\omega_{0}^{2}-\frac{\gamma^{2}}{4}
 	\omega_{0}^{2}=\frac{\gamma^{2}}{4}t
 	\] This situation is referred to as critically damped. If we increase the damping further, and now greater than the resonant frequency, with a longer die off (as in the motion takes longer than if it were only critically damped). This situation is known as over damped.
 }
+\subsection{Electricity}
+\subsubsection{Root Mean Square}
+\par{Recall that the mean/average of a square is given by the following: \[
+		\langle A^{2}\rangle=\frac{1}{2}\|\hat{A}\|^{2}
+\] Also that the average power of any given circuit is: \[
+\langle P\rangle=R\langle I^{2}\rangle
+\] First, factor out one of the modulus of the currents and replace it with the complex version of the Ohm's law. \[
+\langle P\rangle=R\frac{1}{2}\|\hat{I}\|^{2}
+\] \[
+\langle P\rangle=R\frac{1}{2}\left|\frac{\hat{V}}{\hat{Z}}\right|\left|\hat{I}\right|
+\] as we are only talking about the real \textbf{resistance}, we can consider that instead of impedance as a whole (it works generally). \[
+\langle P\rangle=R\frac{1}{2}\frac{\left|\hat{V}\right|}{R}\left|\hat{I}\right|
+\] \[
+\langle P\rangle=\frac{1}{2}\left|\hat{v}\right|\left|\hat{I}\right|
+\] \[
+\langle P\rangle=\frac{\left|\hat{V}\right|\left|\hat{I}\right|}{2}
+\] \[
+\langle P\rangle=\frac{\left|\hat{V}\right|}{\sqrt{2}}\frac{\left|\hat{I}\right|}{\sqrt{2}}
+\]\[
+\langle P\rangle=\sqrt{\frac{\left|\hat{V}\right|}{2}}\sqrt{\frac{\left|\hat{I}\right|}{2}}
+\] \[
+\langle P\rangle=\sqrt{\langle V^{2}\rangle}\sqrt{\langle I^{2}\rangle}
+\] 
+The angular brackets suggest that it is an average, and with the square it suggests it is an average of the square. Therefore the square root of the average of the square must be the \textbf{root mean square (RMS)} value: $V_{RMS}$ and $I_{RMS}$ with the formulae: \[
+	V_{RMS}=\frac{V_{peak}}{\sqrt{2}}
+\] \[
+	I_{RMS}=\frac{I_{peak}}{\sqrt{2}}
+\] The formulae for DC circuits can now work with AC too, just consider the RMS Voltage/Current instead of the peak. 
+\[
+\begin{matrix}
+	P=VI & P=V_{RMS}I_{RMS}
+\end{matrix}
+\] }
+\subsubsection{Capacitors and Inductors in AC vs DC circuits}
+\par{Consider a capacitor in an AC circuit. We use the complex Ohm's law like relationship to determine the current going across the capacitor by taking the real component of voltage divided by the complex impedance. \[
+		I=\mathrm{Re}\left[\frac{\hat{V}}{\hat{Z}}\right]
+\] }
+
 
 \end{document}
