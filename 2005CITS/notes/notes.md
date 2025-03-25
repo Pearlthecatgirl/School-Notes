@@ -119,6 +119,7 @@ int y= (int)x;
     ```
 
 #### classes
+
 - contains fields and methods:
     - methods are like a function
     - fields are data
@@ -148,3 +149,16 @@ int y= (int)x;
     ```
     account.balance=3;
     ```
+
+#### String class
+
+- Strings are immutable
+    - cannot be changed
+    - cannot dereference
+        - for equality checking, use .equals()
+            - most non primative objects should use this
+    - 
+
+
+
+
