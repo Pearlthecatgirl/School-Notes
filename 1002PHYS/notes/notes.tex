@@ -1,5 +1,4 @@
 \documentclass[10pt]{report}
-
 %preamble stuff here :3
 \usepackage{amsmath}
 \usepackage[margin=2cm,nohead]{geometry}
@@ -796,7 +795,16 @@ The angular brackets suggest that it is an average, and with the square it sugge
 \subsubsection{Capacitors and Inductors in AC vs DC circuits}
 \par{Consider a capacitor in an AC circuit. We use the complex Ohm's law like relationship to determine the current going across the capacitor by taking the real component of voltage divided by the complex impedance. \[
 		I=\mathrm{Re}\left[\frac{\hat{V}}{\hat{Z}}\right]
-\] }
+\] 
+
+}
+\subsubsection{In an AC current}
+\par{
+At high frequencies $\left(\omega\to\infty\right)$, capacitors essentially become short circuits, while inductors effectively have infinite resistance. At low frequencies however, inductors (since they resist changes in current, and in 0 $gom$ such as DC, there is no change in current) will act like a wire while capacitors fail to work.
+}
+\subsection{Voltage divider}
+\par{A voltage divider is a circuit that produces an output voltage that is a fraction of the input voltage. We can create filter circuits from the combination of inductors and capacitors following the properties in the previous section. This will filter out low or high frequencies.}
+
 
 
 \end{document}
