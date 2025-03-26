@@ -157,7 +157,37 @@ int y= (int)x;
     - cannot dereference
         - for equality checking, use .equals()
             - most non primative objects should use this
-    - 
+
+#### Access modifiers
+
+- Fields in a class can be declared as *private* or *public*    
+    - private means this field can only be accessed within the class
+        - This usually means using getters and setters to access information
+        - Data hiding and **encapsulation**
+    - public means any other class can access these fields
+    - If 2 instances of 1 class have a private field, both instances can access that private field, allowing for copying. Example:
+
+```
+    public void copyInto(safearray other) {
+        if (size<=other.size) for (int i=0;i<other.size;i++) other.array[i]=array[i];
+    }
+```    
+Notice that other.array[] is private, but can still be accessed as they are both instances of the same class.
+
+#### Overloading of methods
+
+- Multiple methods in java can have the same name, as long as they are distinguishable (different parameters)
+- This is essentially python's non-arguments 
+- Note that the return type is **NOT** part of the signature, so it doesnt matter if they are the same or not, only the function name and arguments
+- Constructors can be overloaded as well
+
+#### Static Keyword
+
+- a static method exists and functions on its own, and can be called without the need for a class.
+- the main function can be called without calling the class, while a method within another class may need to be called upon its class.
+- Fields can also be static, but they are 1 per class. Creating a new instance of that class will have the same 1 static field as the one before
+
+
 
 
 
