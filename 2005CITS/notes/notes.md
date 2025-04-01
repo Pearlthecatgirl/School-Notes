@@ -187,8 +187,35 @@ Notice that other.array[] is private, but can still be accessed as they are both
 - the main function can be called without calling the class, while a method within another class may need to be called upon its class.
 - Fields can also be static, but they are 1 per class. Creating a new instance of that class will have the same 1 static field as the one before
 
+#### Inheritance
 
+- Code reuse and abstraction
+- Make a subclass
+    - Subclass inherits all members (fields and methods but not constructors)
+    - Subclass can have move features on top of its inherited ones
 
+##### Extends keyword
 
+- copies all fields and methods that aren't private
 
+has the following syntax: 
+
+```
+public class sub_class extends super_class {
+
+}
+```
+Where super_class is the parent of this sub_class
+
+##### Protected keyword
+
+- protected is similar to private, but it can be accessed by subclasses.
+
+##### Default access modifier
+
+- When no access modifier is given
+
+- In a class, when fields are not initialised they are automatically set to zero values
+    - objects and arrays are set to null
+    - Boolean are set to false
 
