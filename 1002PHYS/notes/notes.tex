@@ -842,7 +842,79 @@ q\left(\vec{v}\times\vec{B}\right)=q\vec{E}
 \] and from this we derive: \[
 \left|\vec{v}\right|=\frac{\left|\vec{E}\right|}{\left|\vec{B}\right|}
 \] Known as: velocity selector}
+\section{Charged particles in magnetic fields}
+\par{Consider a particle moving an infinitesimal amount: $d\vec{x}$ \[
+d\vec{x}=\vec{v}dt
+\] (infinitesimal change in position is velocity times infinitesimal change in time.) Then the work done across this distance is given by \[
+dW=\vec{F}\cdot d\vec{x}
+\] As we are measuring work done by magnetic field's force, we use magnetic force: \[
+dW=q\left(\vec{v}\times\vec{B}\right)\cdot d\vec{x}
+\] \[
+dW=q\left(\vec{v}\times\vec{B}\right)\cdot \vec{v}dt
+\] However, this reveals that the velocity attached to the field is perpendicular to the velocity of the work, meaning that their dot product is zero, revealing that the magnetic field actually does no work. This also means that the final speed and initial speed are equal (considering $W=\Delta E_{k}$). The magnetic force will not change the speed, rather the direction of the speed. If we consider some charged particle instantly appearing in a magnetic field, with some velocity $\vec{v}$ we can work out that the magnetic force works downwards. Meaning the particle will be deflected downwards. After a certain number of time, we observe the system again and the force is again rotated, and this time the velocity is no longer pointing to the right. After even more time we can observe that the particle moves in circular motion. 
 
+As the magnitude force does not change, we can generalise it in 1 equation for all different time states under the same condition: \[
+\vec{F}=q\left(\vec{v}\times\vec{B}\right)
+\] \[
+F=qvB\sin\left(\theta\right)
+\] as they are always at right angles, theta is always $\frac{\pi}{2}$. \[
+F=qvB
+\] Since this displays centripetal motion with force pointing towards the centre of the circular motion, we can see that the centripetal force is supplied by the force of magnetic field. So, we use the centripetal force formula to determine the radius of its circular path: \[
+F_{c}=F=qvB=\frac{1}{r}mv^{2}
+\] after rearranging, we get the cyclotron formula: \[
+r=\frac{mv}{qB}
+\] \[
+r=\frac{p_{charge}}{qB}
+\] We can also find the cyclotron period through the period formula: \[
+T=\frac{2\pi r}{v}
+\] \[
+T=\frac{2\pi \frac{p_{charge}}{qB}}{v}
+\] \[
+T=\frac{2\pi m}{qB}
+\] and cyclotron frequency: \[
+f=\frac{qB}{2\pi m}
+\] If the velocity is no longer at right angles to the magnetic field, then we only consider the perpendicular velocity for its circular path, however, the velocity that is parallel to the magnetic field remains unaffected, meaning it will move in a \textbf{helical path}.
+}
+\subsection{Magnetic force on current}
+\par{Imagine some wire, and along the wire there are charged particles travelling at speed v. As a result it has a linear charge density $\lambda$ a measure of how many coulombs per metre in the wire. (ignore stationary charges because they don't react with the magnetic field.) $\lambda$ is defined as: \[
+\lambda=\frac{dq}{dt}
+\] this means that the infinitesimal amount of charge is given by the charge density multiplied by the infinitesimal amount of wire. Integrating both sides gives the total length and total charge over that length. \[
+\int_{}^{}{\lambda}\mathrm{dl}=\int_{}^{}{}\mathrm{dq}
+\] \[
+\lambda l_{total}=q_{total}
+\] Instead of integrating, if we divide both sides by the infinitesimal amount of time, we get the current and velocity \[
+\frac{dq}{dt}=\lambda\frac{dl}{dt}
+\] \[
+I=\lambda\frac{dl}{dt}
+\] \[
+I=\lambda v
+\] As the path of the wire is fixed, usually the direction is not stated. Lets now consider the magnetic force. As we are talking about a whole 'cluster' of charges, we can simply integrate over them to find the net force due to magnetic field: \[
+\vec{F}=\int dq\left(\vec{v}\times\vec{B}\right)
+\] we can then substitute in the linear charge density:  \[
+\vec{F}=\int \left(\vec{v}\times\vec{B}\right)\lambda dl
+\] \[
+\vec{F}=\int \left(\vec{v}*\lambda\times\vec{B}\right) dl
+\] \[
+\vec{F}=\int \left(\vec{I}dl\times\vec{B}\right)
+\] If we consider $dl$ to be a vector, it would point in the same direction as the current (current flows along the wire), so we can consider the  $\vec{I}dl$ part as $Id\vec{l}$ \[
+\vec{F}=\int \left(Id\vec{l}\times\vec{B}\right)
+\] we can now pull I, which is usually constant, out of the integral \[
+\vec{F}=I\int \left(d\vec{l}\times\vec{B}\right)
+\] If B is also constant, it can be integrated over, to give: \[
+F=IlB
+\] (assuming wire and fields are perpendicular to each other.)
+}
+\section{Biot-Savart Law}
+\par{The Biot-Savart Law describes how a moving particle has its own magnetic field, given by: \[
+		d\vec{B}=\frac{\mu_{0}}{4\pi}\frac{I\mathrm{d}\vec{l}\times\hat{r}}{r^{2}}
+\] Similar to the electric field, the magnetic field also obeys the superposition principle. \[
+\vec{B}=\int_{}^{}{\frac{\mu_{0}}{4\pi}\frac{I\mathrm{d}\vec{l}\times\hat{r}}{r^{2}}}
+\] }
+This can be simplified down into circular wire loops and long straight wire loops. 
+\section{Magnetic dipole}
+\par{A bar magnet has 2 poles, therefore the dipole. There is a North and South pole. The magnetic field lines come out of North and into South. The earth acts like a large bar magnet, however conventional North pole acts as a south pole while the geographic south pole acts as the north pole. This means that magnetic field lines come out of geographic south pole and into geographic north pole. A compass points north, because it aligns with the direction of the field lines, pointing into the magnetic south pole. There is current \textbf{no evidence} for monopoles. This is shown in Gauss' law for magnetism: \[
+		\oint\vec{B}\cdot\mathrm{d\vec{A}}=0
+\] Which shows that the magnetic flux from any closed surface is always 0. }
 
 
 \end{document}
