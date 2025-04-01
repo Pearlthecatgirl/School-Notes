@@ -781,4 +781,142 @@ f\left(x,y\right)=\left(x+y,x-y\right)
 If $\left[f\right]_{CB}$ is the matrix of linear transformation $f$, then \[
 \left[f\right]_{CB}\left(v\right)_{B}=\left(f\left(v\right)\right)_{C}
 \] . In other words, multiplying by $f_{CB}$ takes a $B$-coordinate vector, applies the linear transformation  $f$ and expresses the result in  $C$-coordinates.
+
+\subsection{Change of basis/coordinate system}
+\par{Let $B$ and  $C$ be 2 bases for the same  $m$-dimensional subspace $V$ of  $\mathbb{R}^{n}$, often n=m and $V=\mathbb{R}^{n}$ Then the \textbf{Transition Matrix} $P_{CB}$ such that $\left(v\right)_{C}=P_{CB}\left(v\right)_{B}$ I.e, given a B matrix, we multiply it by $P$ and we obtain  $C$ coordinates.
+
+	If $B=\lbrace u_{1}...u_{n}\rbrace$, then the $i$'th column of  $P_{CB}$ contains the $C$-coordinates of  $u_{i}$
+}
+\par{
+Example: suppose that we have:
+}
+\begin{align}
+	B&=\lbrace\left(1,1,0\right), \left(1,0,0\right), \left(0,0,-1\right)\rbrace \\
+	C&=\lbrace\left(0,0,1\right), \left(1,0,1\right), \left(0,1,0\right)\rbrace
+\end{align}
+Then $P_{CB}$ given by the following: \[
+\left(1,1,0\right)+a\left(0,0,1\right)+b\left(1,0,1\right)+c\left(0,1,0\right)
+\] Find out what coefficients of linear transformations of c make up the b vectors. \[
+\left(1,1,0\right)+-1\times\left(0,0,1\right)+1\times\left(1,0,1\right)+1\times\left(0,1,0\right)
+\] so: \[
+\left[
+\begin{matrix}
+	-1 & .&.  \\
+	1 & .&. \\
+	1 & .&.
+\end{matrix}
+\right]
+\] For the 2nd column: \[
+\left(1,0,0\right)+a_{2}\times\left(0,0,1\right)+b_{2}\times\left(1,0,1\right)+c_{2}\times\left(0,1,0\right)
+\] which gives the coefficients $\left(-1,1,0\right)$ \[
+\left[
+\begin{matrix}
+	-1 & -1&.  \\
+	1 & 1&. \\
+	1 & 0&.
+\end{matrix}
+\right]
+\] and finally with the last one: \[
+\left(0,0,-1\right)+a_{3}\times\left(0,0,1\right)+b_{3}\times\left(1,0,1\right)+c_{3}\times\left(0,1,0\right)
+\] Which completes our transition matrix: \[
+P_{CB}\left[
+\begin{matrix}
+	-1 & -1&-1  \\
+	1 & 1&0 \\
+	1 & 0&0
+\end{matrix}
+\right]
+\] Given any coordinate in B, we can multiply by that transition matrix and get the coordinate set in c coordinates.
+\subsection{EigenVectors}
+\par{If $A $ is an $n\times n$ m matrix, then a non-zero vector is called an eigenvector of A with eigenvalue $\lambda\in\mathbb{R}$}
+
+\subsection{More Properties of Eigenvalues}
+\begin{itemize}
+	\item{The eigenvalues of a transpose of a matrix is the same}
+	\item{THe eigenvalues of $kA$ where  ($k\in \mathbb{R}$)}
+\end{itemize}
+
+Example of solving:
+\[
+A=\left[\begin{matrix}
+	1 & 2 \\ 0 & 1
+\end{matrix}\right]
+\] 
+A then has the characteristic polynomial: \[
+\left|
+\begin{matrix}
+	1-\lambda & 2 \\ 0 & 1-\lambda
+\end{matrix}
+\right|=\left(\lambda-1\right)^{2}
+\] 
+Then solve it: \[
+\begin{matrix}
+	1 & 2 \\ 0 & 1
+\end{matrix}
+\begin{matrix}
+	x \\y
+\end{matrix}=
+\begin{matrix}
+	x \\y
+\end{matrix}
+\] 
+From now just find basis as normally would, in this case: \[
+B=\lbrace\left(1,0\right)\rbrace
+\] 
+From This, we get that: 
+\begin{itemize}
+	\item{Algebraic multiplicity of 1 is 2, (the maximum possible dimension of its eigenspace)}
+	\item{Geometric multiplicity of 1 is 1, (The actual possible dimension of its eigenspace)}
+\end{itemize} Remember that: \[
+1\ge\text{geometric multiplicity}\ge\text{algebraic multiplicity}
+\] 
+\subsection{Diagonalisable}
+\par{A linear transformation is \textbf{diagonalisable} if there is a basis $B$ such that $\|f\|_{BB}$ is a diagonal matrix. There is a set of conditions for when this occurs:}
+A matrix $A$ is diagonalisable if and only if:
+\begin{itemize}
+	\item{It has all \textbf{real} eigenvalues (no complex)}
+	\item{Every eigenvalue has the \textbf{maximum possible} geometric multiplicity.}
+\end{itemize}
+\subsubsection{Generalised process}
+\begin{itemize}
+	\item{Find the eigenvalues and their multiplicities. If some $\lambda$ has geometric multiplicity that isnt the same as the algebraic multiplicity then this immediately fails }
+\end{itemize}
+\chapter{Calculus}
+\section{Improper Integrals}
+\par{There are 2 types of improper integrals, type 1 and type 2.
+
+	The first type involves integrating over some infinite interval. An example being: \[
+	\int_{\infty}^{a}{f\left(x\right)}\mathrm{dx}
+	\] Where the upper boundary is infinite. This means that this integral is improper.
+
+	The second type of improper integral is where the interval is finite, but the function itself is unbounded. An example being: \[
+	\int_{-1}^{1}{\frac{1}{x}}\mathrm{dx}	
+	\] There is a vertical asymptote which makes it improper.
+
+	Sometimes the area from improper integrals are infinite but sometimes they are not. 
+}
+\subsection{Type One}
+\par{Type one can either be from a to infinity or negative infinity to b. It is actually defined as: \[
+\int_{a}^{\infty}{f\left(x\right)}\mathrm{dx}=\lim_{t}{infty}\int_{a}^{t}{f\left(x\right)}\mathrm{dx}
+\] or \[
+\int_{-\infty}^{b}{f\left(x\right)}\mathrm{dx}=\lim_{t}{-infty}\int_{t}^{b}{f\left(x\right)}\mathrm{dx}
+\] 
+This means that we can calculate these integrals by evaluating the integral normally up until the value $t$ and afterwards, take the limit as  $t$ tends to  $\infty$. If the limit exists, the improper integral is  \textbf{convergent}, otherwise it is known as \textbf{divergent}.
+
+Type one improper integrals can also be doubly improper, being bounded from $-\infty\to\infty$. Then we can split the integral into one where the lower bound is negative infinity to some constant c and the other would be from c to positive infinity. Then the integral is convergent if and only if both improper integrals are convergent. The value of C is unimportant, simply choose the most convenient one.
+}
+\subsection{Type Two}
+\par{Type 2 of integrals are of the following form: \[
+\int_{a}^{b}{f\left(x\right)}\mathrm{dx}
+\] Where $f$ is undefined at an end point (vertical asymptote). This gives 2 situations.
+
+The first situation being if  $f\left(a\right)$ is undefined. Then we define: \[
+\int_{a}^{b}{f\left(x\right)}\mathrm{dx}=\lim_{t\to a^{+}}\int_{t}^{b}{f\left(x\right)}\mathrm{dx}
+\] 
+Otherwise, if $f\left(b\right)$ is undefined, we define: \[
+\int_{a}^{b}{f\left(x\right)}\mathrm{dx}=\lim_{t\to b^{-}}\int_{a}^{t}{f\left(x\right)}\mathrm{dx}
+\] }
+
+
 \end{document}
+
