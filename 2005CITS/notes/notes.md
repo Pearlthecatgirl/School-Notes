@@ -219,3 +219,27 @@ Where super_class is the parent of this sub_class
     - objects and arrays are set to null
     - Boolean are set to false
 
+##### Method overriding and polymorphism
+
+- dynamic dispatch
+    - If i have a class variable being created using a subclass constructor, it will know at runtime to call the method in the constructor rather than the type. 
+```
+    class animal {
+        public void talk() {
+        }
+    }
+    class dog extends animal {
+        public void talk() {
+        }
+    }
+    animal newAnimal=new dog();
+```
+    This will use the dog version of talk rather than the animal version of talk.
+
+- Methods can only override when the signature is exactly the same.
+
+- @Override keyword
+    - Notifies the compiler that this method should override a method from its superclass.
+
+
+
