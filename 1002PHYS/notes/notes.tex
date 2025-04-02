@@ -657,7 +657,7 @@ The stored energy is made up of:
 	\item{The kinetic energy of the mass}
 	\item{The elastic potential energy of the spring}
 \end{itemize}
-In the long run, the derivative of this stored energy term does not change: this means if we avergae the power after a long time, all the energy ends up in the resistive term of 'p': \[
+In the long run, the derivative of this stored energy term does not change: this means if we average the power after a long time, all the energy ends up in the resistive term of 'p': \[
 \langle P\rangle=\langle b\left(\frac{dx}{dt}\right)^{2}\rangle
 \] Where the angular brackets denote 'average over a long period of time. We can now use the trick from earlier: $\langle A^{2}\rangle=\frac{1}{2}\|\hat{A}\|^{2}$ \[
 \langle P\rangle=\langle b\left(\frac{dx}{dt}\right)^{2}\rangle
@@ -914,7 +914,19 @@ This can be simplified down into circular wire loops and long straight wire loop
 \section{Magnetic dipole}
 \par{A bar magnet has 2 poles, therefore the dipole. There is a North and South pole. The magnetic field lines come out of North and into South. The earth acts like a large bar magnet, however conventional North pole acts as a south pole while the geographic south pole acts as the north pole. This means that magnetic field lines come out of geographic south pole and into geographic north pole. A compass points north, because it aligns with the direction of the field lines, pointing into the magnetic south pole. There is current \textbf{no evidence} for monopoles. This is shown in Gauss' law for magnetism: \[
 		\oint\vec{B}\cdot\mathrm{d\vec{A}}=0
-\] Which shows that the magnetic flux from any closed surface is always 0. }
+\] Which shows that the magnetic flux from any closed surface is always 0. 
+
+Imagine some rectangular wire loop in some uniform constant magnetic field. Then given the right hand rule, we can work out that the sides perpendicular to the field lines will experience some force (one side up and one side down) which forces the loop to spin. The sides that are parallel to the magnetic field will have no perpendicular component (no force). If the parallel length is given as $r$ (we are rotating on that axis), meaning that torque is given:  \[
+\vec{\tau}=\vec{r}\times\vec{F}
+\] As both sides receive equal force, the magnitudes can just be added. After rearranging and manipulation we get that: \[
+\vec{\tau}=\vec{\mu}\times\vec{B}
+\] This is defined as torque on a magnetic dipole: Torque is the magnetic dipole moment crossed with the magnetic field.
+}
+\subsection{Forms of magnetism in matter}
+\par{There are 3 main distinct forms, known as: Ferromagnetism, Paramagnetism and Diamagnetism.
+}
+\subsubsection{Ferromagnetism}
+\par{Limited to only a few substances, including iron and nickel. The strong interactions between the atomic magnetic dipole moments form magnetic domains on the piece of metal. Magnetic domains are regions that contain a lot of atoms whose magnetic moments all line up. Each region may have a different net magnetic moment but within each region all magnetic dipole moments are in the same direction. When a external magnetic force is applied, these magnetic dipole moments will all line up and form a net magnetic moment. If the field changes direction, then there is a torque generated which tries to force the material to the new direction. If the field is switched off, a hard ferromagnetic substance will keep that net magnetic dipole moment while soft ferromagnetic substances will lose them. Ferromagnetic materials can lose their ferromagnetic properties when they are heated, as the random thermal motions of the particles will disrupt the overall magnetic dipole. This occurs at the "curie temperature". A paramagnetic material is similar to ferromagnetic, except that it does not have magnetic domains, meaning that its magnetic interaction is weaker. }
 
 
 \end{document}
