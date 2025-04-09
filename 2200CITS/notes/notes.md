@@ -186,3 +186,27 @@ def is_matched_html(raw):
     return S.is_empty()
 ```
 
+### Data Structures
+
+#### Maps and Dictionaries
+
+- A map is a searchable collection of items that are key-value pairs
+    - There is a key and a value
+- A map is an abstract datatype, it is implemented (for example) as a dictionary (in python). 
+- This can be represented as a **linked list**
+
+#### Queues
+
+- First in first out scheme
+    - Whatever is in the front of the queue gets used first
+    - Insert at the back of the queue
+    - Removal at the front of the queue
+- Operations:
+    - Enqueue: add something to the back of the queue
+    - dequeue: Remove the first element of the queue
+- Array based queue implementation
+    - Array size N in a circular fashion
+    - 2 locations saved
+        - front of queue is the first element in the queue
+
+

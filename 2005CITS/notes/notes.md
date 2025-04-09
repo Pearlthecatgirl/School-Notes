@@ -243,3 +243,39 @@ Where super_class is the parent of this sub_class
 
 
 
+##### Packages
+
+- Namespaces
+    - allows 2 different things with the same name so long as they are in different namespaces
+        - like multiple dirs
+    - Encapsulates a collection of classes
+
+- Usage (Definition):
+```
+    // Name_of_file
+    package my_package;
+```
+Put the class in the a folder with the same name as the package.
+```
+/path/to/proj/my_package/Name_of_file.class
+```
+
+- Can have nested packages, all with respect to the root dir of the project, compile from the root dir
+
+- Accessing
+    - Usage:
+    ```
+        import my_package
+    ```
+    - Can import subpkgs
+- JARs
+    - Turn packages into a jar for distribution
+
+- Packages and access modifiers
+
+|Access Modifier| Class | Package| Subclass| world|
+|-|-|-|-|-|
+|Public|Y|Y|Y|Y|
+|Protected|Y|Y|Y|N|
+|Default|Y|Y|N|N|
+|Private|Y|N|N|N|
