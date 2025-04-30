@@ -279,3 +279,113 @@ Put the class in the a folder with the same name as the package.
 |Protected|Y|Y|Y|N|
 |Default|Y|Y|N|N|
 |Private|Y|N|N|N|
+
+
+##### Enums
+
+Syntax: 
+```
+enum MyEnum {
+    VALUE1, VALUE2, VALUE3, VALUE4
+}
+// Convention to use capitals
+
+// Usage:
+MyEnum thisvariable = MyEnum.VALUE1;
+```
+- can be compared with '=' because int under the hood
+- can use as if it were an int in switch
+- enums are classes, so they can be public, protected, private or default like any class
+    - however, there is no inheritence (no extend)
+    - they do have their own methods
+    - you can add your own methods
+
+<code>
+
+enum Transport {
+    // the value of each enum "member" can be set too
+    BUS(50), TRAIN(100), FERRY(20), TRAM(30),
+
+    // similar to class, there can be "const" members in enums
+    private final int typicalSpeed;
+
+    // A constructor, (notice the same name?) 
+    // It sets the typicalspeed of the value...
+    // calling Transport.TRAIN will probably call the constructor..?
+    Transport(int typicalSpeed) {
+        this.typicalSpeed=typicalSpeed;
+    }
+
+    // just some getter method
+    public int getTypicalSpeed() {
+        return typicalSpeed;
+    }
+}
+
+public class EnumConstructor {
+    public static void main(String[] argv) {
+            System.out.println(Transport.BUS.getTypicalSpeed());
+    }
+}
+</code>
+
+##### Autoboxing and unboxing
+
+- Autoboxing: automatically convert from primitive to object type
+- Unboxing: automatic conersion from object to primitive
+- "place the primitive type in a box, which is the object we have"
+
+##### Generic Types
+
+##### OOP Principles
+
+- Principles about writing clean OOP code (SOLID principle)
+    - SOLID:
+        - Single-responsibility principle
+            - A class should have only 1 reason to change:
+            - Single reason means single responsibility
+            - A class should not be responsible for too many things (imagine like... KISS principle)
+            - class should do 1 thing, 
+            - only 1 source of specification can modify our class.
+                - having multiple specifications that can effect our class mean there is more responsibility
+                - <code>
+                    public class mazeSolver {
+                        public void setwallposition() {} 
+                        // This should not be in this class. 
+                        // a "solver" class should not need to modify the maze
+                        public Path findPath() {}
+                } </code>
+                - instead split into having a solver class and a modify maze class
+        - Open–closed principle
+            - software should be open for extension but closed for modification
+            - Open for extension: we can add new functionality (don't make a final class...?)
+            - closed for modification: idealy we should not change the existing code to add new functionality
+                - see above for single response principle
+            - add new features by making new classes/methods, not by modifying existing code
+            - encourages interface and abstract usage.
+        - Liskov substitution principle
+            - subtypes should be subsitutable for their base types without affecting the correctness of the program
+            - a subclass should be able to pretend to be its superclass without breaking anything
+            - anthing true for a square should be true for a shape -> as a square is a shape
+                - square can pretend to be a generic shape and have all conditions to shape apply to square
+            - new derived class should not introduce unexpected behaviour:
+                <code>
+                    class bird {void fly() {}}
+                    class penguin extends bird {
+                    @Override
+                    void fly() {}
+                    }
+                </code>
+            - penguin cannot subsitute a generic bird, because penguins can't fly
+        - Interface segregation principle
+            - Clients should not be forced to depend on methods they do not use
+            - lots of smaller interfaces are usually better than one big class/interface
+            - make an interface for each different method
+            - enhances maintainability and readability
+            - interfaces can be fused anyway
+        - Dependency inversion principle
+            - High level models should not depend on low-level models; both should depend on abstractions
+            - Abstractions should not depend on details, details should depend on abstractions
+            - don't store classes, store interfaces
+
+
