@@ -510,20 +510,30 @@ wait();
     - notify() calls 1 thread (wakes up 1 thread?)
     - notifyAll() calls all threads.
 
+#### Anon class, Lambda, Javadoc
+
+- Anonymous class:
+- a "single use class" that is more consise and less verbose than a regular class: 
+- syntax:
+```
+new Existing_class_or_interface_here(constructor_args here) {
+    // methods
+    // and
+    // fields here
+}
+```
+- either 1 subclass or 1 interface
+
+#### Functional interfaces
+
+- A functional interface is an interface with exactly one method to override
+- Used in conjunction with lambda functions
+- syntax:
+
+```
+(parameters)->expression;
+```
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
