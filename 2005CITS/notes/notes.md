@@ -389,3 +389,141 @@ public class EnumConstructor {
             - don't store classes, store interfaces
 
 
+#### Concurrency and multithreading:
+
+- Usually processes run on single threads
+- If there is only 1 core, computer will schedule the processes
+- Two processes running at the same time is called **Concurrency**
+    - Processes never run at the same time, just they are scheduled so they run as if they are running side by side
+- Example usage:
+- A gui file editor:
+    - load the gui while loading the file
+    - use 1 thread to read file
+    - use another thread to load the gui
+ 
+Thread vs process:
+- Threads have access to shared memory (as they are the same program)
+- Processes are described as different programs
+
+Java supports by default multithreaded code
+- Each instance represents a new thread of execution
+
+Thread usage example:
+
+```
+class myThread extends Thread {
+    private int num;
+    public myThread(int num) {this.num=num}
+    @Override 
+    public void run() {
+        System.out.print(num);
+    }
+}
+
+public class ThreadExample {
+    public static void main(String[] argv) {
+        for (int i=0;i<10;i++) {
+            myThread x=new myThread(i);
+            x.run();
+        }
+    }
+}
+```
+
+- The run() function is run concurrently.
+- Not necessarily run in 1,2,3,4,5,6... order
+
+Waiting:
+- call the "join()" method from the main thread to wait for a sub-thread to finish:
+- The sub-thread will join when its code has finished executing
+
+```
+class myThread extends Thread {
+    private int num;
+    public myThread(int num) {this.num=num}
+    @Override 
+    public void run() {
+        System.out.print(num);
+    }
+}
+
+public class ThreadExample {
+    public static void main(String[] argv) {
+        Thread[] threads=new Thread[10];
+        for (int i=0;i<10;i++) {
+            threads[i]=new myThread(i);
+            x.run();
+        }
+        for (int i=0;i<10;i++) {
+            try {
+                threads[i].join();
+            } catch (InterruptedException IE) {}
+        }
+    }
+}
+```
+
+##### Race Condiiton:
+
+- When two threads try to do an operation at the same time and the order of execution changes the result.
+- Example:
+- Good: A reads 0, A writes 1, B reads 1, B writes 2
+- Bad: A reads 0, B reads 0, A writes 1, B writes 1
+- To fix this, we can try: autobox primitive values so that they are no longer mutable. 
+
+Fix For race condition: "Synchronized" statements
+
+```
+synchronized (object) {
+
+}
+```
+
+- works with all objects
+
+- When the thread enters the block above, the thread will try to lock (think creating a mutex). If the block is already locked, then it will wait until it is available.
+- Nothing within the block can have a race condition, but which block runs first is still not determined. 
+
+- A whole method can be described to be synchronized:
+
+```
+public synchronized mymethod() {}
+```
+##### Deadlock
+
+- Two threads and two objects
+- the first thread gets a lock on the first object while the 2nd thread gets a lock on the 2nd object
+- they both need both objects to execute
+- they both wait for the other to finish
+- They will wait forever.
+
+##### Interthread communication
+- threads talk to each other
+
+```
+wait();
+```
+
+- Used to put the current thread into a "waiting" state
+- must be called from a synchronized context
+- the thread releases the lock on some object and waits until another thread calls ```notify()``` to signify something has been done.
+    - notify() calls 1 thread (wakes up 1 thread?)
+    - notifyAll() calls all threads.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
